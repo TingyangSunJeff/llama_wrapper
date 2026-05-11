@@ -64,7 +64,7 @@ The weights decision (which quantization) is the gating step. After that, the fi
 
 These are placement levers. In the current llama.cpp they are all decided at startup and not adapted online.
 
-## 3. What llama.cpp decides for you today
+## 3. What llama.cpp decides
 
 Every policy currently inside llama.cpp is a fixed threshold, LRU, or round-robin. None of them are workload-aware, and none of them account for reconfiguration cost.
 
