@@ -2,7 +2,7 @@
 
 ## 1. Why we are looking at llama.cpp
 
-The edge-deployed LLM setting Prof. Arslan described, a drone or small autonomous platform with no guaranteed ground link, rules out any serving stack that assumes a Python runtime, a container orchestrator, or a cloud control plane. vLLM fits servers, not companion computers. llama.cpp fits the edge by construction:
+The edge-deployed LLM setting, a drone or small autonomous platform with no guaranteed ground link, rules out any serving stack that assumes a Python runtime, a container orchestrator, or a cloud control plane. vLLM fits servers, not companion computers. llama.cpp fits the edge by construction:
 
 - Single self-contained C++ binary, no Python in the hot path.
 - Loads one `.gguf` model file (weights plus quantization plus metadata in one file).
