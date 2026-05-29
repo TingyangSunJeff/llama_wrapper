@@ -38,7 +38,7 @@ vLLM’s PagedAttention paper targets high-throughput server-side serving by red
 
 ## 3. How llama.cpp Works Conceptually
 
-### 3.1 Restaurant Analogy
+### 3.1 Restaurant Analogy for one server
 
 - **Kitchen** = the loaded model.  
   One model is loaded into a server process. The “chef” is defined by the chosen model file and quantization level. A higher-quality quantization such as Q8_0 consumes more memory, while a lower-bit quantization such as Q2_K or Q3_K consumes less memory but may lose quality. GGUF quantization formats in llama.cpp include legacy formats such as Q4_0/Q5_0/Q8_0 and K-quant formats such as Q3_K, Q4_K, Q5_K, and Q6_K.
