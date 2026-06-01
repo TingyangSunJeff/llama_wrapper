@@ -510,25 +510,33 @@ If we include multiple edge servers, we must distinguish carefully:
 
 ---
 
-## 9.5 QLLMS: Quantization-Adaptive Edge Scheduling
+## 9.5 QLLMS: Quantization-Adaptive Edge Scheduling 
 
 **Paper:** *QLLMS: Quantization-Adaptive LLM Scheduling for Partially Informed Edge Processing*  
 **Source found:** IEEE Xplore search result: <https://ieeexplore.ieee.org/abstract/document/11044591>
 
 The search result indicates that QLLMS studies quantization-adaptive LLM scheduling for edge processing, where scheduling and quantization selection are jointly considered.
 
-### Current Status
+### Core idea
+The key abstraction in QLLMS is the Available Quantization Set, or AQS. For each task-server pair, AQS records which quantization options are feasible under the task’s SLO constraints. For example, a task may be feasible on a cheaper GPU under 4-bit quantization but infeasible under FP16 due to memory or latency constraints. The paper defines AQS through the intersection of quantization choices satisfying multiple SLOs, including latency and perplexity requirements.
+QLLMS has three major modules:
 
-This is a **must-read** paper before finalizing novelty. From the search result alone, it may be close to our direction, but we need the full paper to check:
+AQS Profiler
+Profiles LLM tasks across GPU types and quantization levels to determine feasible quantization options under perplexity and latency constraints.
 
-- whether it includes model reload/switching cost,
-- whether it adapts context length/concurrency,
-- whether it targets llama.cpp-like runtime knobs,
-- whether it handles online nonstationary workloads.
+AQS Reconstructer
+Handles partially informed edge systems where not all task-server-quantization profiles are known. It uses low-rank matrix completion and singular value thresholding to reconstruct missing SLO/profile entries from partial samples. 
+
+Stable Matching Scheduler
+Uses a many-to-one deferred acceptance algorithm to match LLM tasks to edge servers. Tasks prefer cheaper feasible servers, while servers rank tasks based on normalized service-satisfaction ratios. The paper proves the resulting matching has no blocking pairs and is stable.
 
 ### Novelty Impact
 
-Potentially dangerous. Do not ignore it.
+First, it supports the claim that quantization choice and scheduling/resource allocation are deeply coupled in edge LLM serving. 
+Second, its measurement study supports our argument that quantization affects memory, latency, quality, and cost in nontrivial ways. In particular, latency is not always monotonic in bit-width, so a controller needs empirical profiles or learned performance models. 
+Third, QLLMS leaves open the configuration-control layer that we want to study. It decides where a task should run and with what quantization; it does not decide when a long-running local serving instance should pay the cost to reload a different model file, reshape context length, or change slot concurrency.
+
+QLLMS shows that quantization-aware scheduling is important for heterogeneous edge LLM serving, but it treats quantization as part of a task-server assignment problem. Our work studies a different control layer: an online llama.cpp-style serving instance must decide when to keep its current memory shape and when to pay a reconfiguration cost to change model/quantization file, context length, and KV-slot concurrency under changing workloads.
 
 ---
 
