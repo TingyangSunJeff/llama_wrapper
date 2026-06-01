@@ -554,11 +554,6 @@ Our work studies:
 changing configuration → when and how to reconfigure
 ```
 
-### Important Correction
-
-This is **not** `arXiv:2601.14277`.  
-`arXiv:2601.14277` is the llama.cpp quantization evaluation paper.
-
 ---
 
 ## 9.7 llama.cpp Quantization Evaluation
