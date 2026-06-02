@@ -435,6 +435,14 @@ A safer claim is:
 
 QLM is a queue management system for mixed interactive and batch LLM requests across different models and SLOs. It estimates request waiting time and orchestrates operations such as request pulling, eviction, load balancing, and model swapping.
 
+Serving Operations (LSOs): It manages the queue using four operations:
+Request Pulling: Bringing requests into the active GPU batch.
+Request Eviction: Moving batch requests back to the CPU/Global Queue to make room for high-priority interactive requests.
+Model Swapping: Moving model weights between Storage, CPU, and GPU.
+Load Balancing: Distributing request groups across multiple instances.
+
+QLM explicitly identifies model swapping as a critical serving operation but notes that traditional policies like Earliest Deadline First (EDF) cause "thrashing" because they ignore the high cost of swapping models
+
 ### Difference from Our Work
 
 QLM is primarily a **queue-management and orchestration** system. It does not focus on llama.cpp-style memory-shape decisions such as:
