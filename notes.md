@@ -209,19 +209,24 @@ Effect:
 - more slots consume more KV memory,
 - more slots reduce feasible context length under fixed memory.
 
-### 5.4 What We Exclude in the First Version
+### **Performance Scenarios: Coarse-Grained Configuration Control**
 
-To keep the first paper scoped:
+In `llama.cpp` runtimes, total memory is typically split between **Model Weights** and the **KV Cache**. Here are three practical cases where reconfiguring these "coarse" knobs improves performance:
 
-- no full multi-model routing problem,
-- no prefill/decode disaggregation,
-- no cloud autoscaling,
-- no distributed tensor/pipeline parallelism as the main focus,
-- no new quantization algorithm,
-- no new KV-cache compression method.
+#### **Scenario A: Switching GGUF Files (Throughput Burst)**
+*   **The Knob:** Switching from a high-quality `Q8_0` (8-bit) GGUF to a compressed `Q4_K_M` (4-bit) file.
+*   **Performance Win:** If a standalone edge server suddenly receives a **burst of 10 concurrent users**, staying on the `Q8_0` model would cause massive queue backlogs and SLO violations.
+*   **The Result:** The controller decides to pay a **3-10 second reload cost** to switch to the `Q4_K_M` file. The new configuration processes tokens faster and consumes significantly less VRAM per user, allowing the burst to be cleared 2-3x faster than staying on the higher-precision model.
 
-These topics are already covered by nearby work such as RouteLLM/OmniRouter for model routing, DistServe/Splitwise for prefill-decode separation, Chiron for autoscaling, and KVQuant/QServe/MorphServe for quantization or KV adaptation.
+#### **Scenario B: Reshaping Context Length (Document Unlock)**
+*   **The Knob:** Modifying the `-c` (context length) parameter.
+*   **Performance Win:** A robot is initially in "chat mode" with a short **2K context**. Suddenly, it needs to analyze a **32K-token technical manual**.
+*   **The Result:** The original 2K configuration would either **OOM (Out of Memory) or truncate the data**. The controller reconfigures the instance to a **32K context**. While this might require switching to a lower weight quantization to fit the larger KV cache, it "unlocks" the ability to perform the long-context task that was previously impossible.
 
+#### **Scenario C: Modifying Parallel Slots (Anti-Blocking)**
+*   **The Knob:** Changing the `-np` (number of parallel slots) parameter.
+*   **Performance Win:** The system is currently running a single long-context "Batch" job with `-np 1`. A new interactive user arrives and is **Head-of-Line (HOL) blocked** for minutes.
+*   **The Result:** The controller reconfigures the memory shape from `{np=1, ctx=32K}` to `{np=4, ctx=8K}`. By dividing the KV memory into **parallel slots**, the system can now use **Continuous Batching** to serve the interactive user and the batch job simultaneously, dropping interactive response time from minutes to milliseconds.
 ---
 
 ## 6. Decision Problem
