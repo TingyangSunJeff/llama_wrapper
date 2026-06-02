@@ -932,32 +932,6 @@ for static, LRU, threshold, and our switching-cost-aware policy.
 
 ---
 
-# 15. One-Paragraph Pitch for the Group
-
-> llama.cpp is the edge-equivalent of vLLM: a lightweight inference engine that serves local users through memory-constrained model weights and KV slots, with practical deployment knobs such as GGUF quantization, context length, and parallel slots. Existing LLM serving work has studied KV paging, request scheduling, multi-model routing, autoscaling, phase disaggregation, and even runtime precision/KV adaptation. However, these works do not directly address the llama.cpp-style edge problem: deciding when to pay a nontrivial reconfiguration cost to change the active model/quantization file, context length, or KV-slot shape under a shifting workload. Our next paper studies this missing layer: switching-cost-aware online configuration control for edge LLM serving. The controller observes workload and system state, then decides whether to keep the current configuration or reconfigure the memory shape of the serving engine to trade off latency, quality, concurrency, and disruption cost.
-
----
-
-# 16. Must-Read List Before Finalizing
-
-1. **MorphServe** — closest technical overlap; dynamic quantized layer swapping and KV resizing.  
-   <https://arxiv.org/abs/2506.02006>
-
-2. **QLM** — queue management with model swapping operations.  
-   <https://arxiv.org/abs/2407.00047>
-
-3. **QLLMS** — potentially close quantization-adaptive edge scheduling; full paper needed.  
-   <https://ieeexplore.ieee.org/abstract/document/11044591>
-
-4. **DILEMMA** — joint quantization and distributed edge inference.  
-   <https://arxiv.org/html/2503.01704v1>
-
-5. **llama.cpp quantization evaluation** — useful empirical support for GGUF quantization trade-offs.  
-   <https://arxiv.org/pdf/2601.14277>
-
-6. **Online Scheduling with KV Cache Constraints** — theoretical scheduling baseline under KV constraints.  
-   <https://arxiv.org/abs/2502.07115>
-
 ---
 
 ## Bottom Line
