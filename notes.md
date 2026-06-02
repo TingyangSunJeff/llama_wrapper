@@ -506,10 +506,11 @@ slow: model/quantization switching
 - ResearchGate copy: <https://www.researchgate.net/publication/389580913_DILEMMA_Joint_LLM_Quantization_and_Distributed_LLM_Inference_Over_Edge_Computing_Systems>
 
 DILEMMA jointly optimizes layer placement and layer quantization across edge computing systems using an integer linear programming formulation.
+The Mechanism: It uses an Integer Linear Programming (ILP) formulation to solve two problems simultaneously: Layer Placement (which device holds which part of the model) and Layer Quantization (what bit-depth should each layer use).
 
 ### Difference from Our Work
 
-DILEMMA focuses on distributed layer placement and quantization across edge servers. Our work focuses on online runtime configuration adaptation for llama.cpp-style serving instances.
+It proves that quantization and resource allocation are deeply coupled at the edge. However, DILEMMA produces a static or semi-static placement. It does not solve the online decision of when an active instance should stop, reload a new GGUF file, and reshape its memory to handle a new burst of traffic.
 
 ### Novelty Impact
 
