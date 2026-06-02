@@ -477,6 +477,7 @@ Our novelty should be framed around:
 - IBM discussion: <https://research.ibm.com/blog/qlm-chiron-llm-orchestration>
 
 Chiron studies hierarchical autoscaling for LLM serving, using queue size, utilization, and SLOs to scale serving instances and batch sizes.
+The Mechanism: It uses a hierarchical controller where the "Upper Level" decides how many GPU instances to provision, and the "Lower Level" decides the batching strategy for those specific instances
 
 ### Difference from Our Work
 
