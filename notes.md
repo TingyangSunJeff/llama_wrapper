@@ -105,6 +105,12 @@ where:
 - `d_model` is the hidden dimension,
 - `b` is bytes per KV element.
 
+Note: this formula assumes one KV head per query head. Modern Llama-3 / Qwen2
+models use **grouped-query attention (GQA)**, so the KV width is
+`n_kv_heads × head_dim`, not the full `d_model`. For Llama-3-8B (32 query heads,
+8 KV heads) the KV cache is ~**4× smaller** than the naive `d_model` estimate;
+use `n_kv_heads × head_dim` in place of `d_model` for any concrete sizing.
+
 This same memory structure appears in our proposal document: total memory is approximately model memory plus per-session KV memory plus temporary memory.
 
 ### Example: Llama-3-8B on a 16 GB Jetson-class Device
@@ -213,10 +219,10 @@ Effect:
 
 In `llama.cpp` runtimes, total memory is typically split between **Model Weights** and the **KV Cache**. Here are three practical cases where reconfiguring these "coarse" knobs improves performance:
 
-#### **Scenario A: Switching GGUF Files (Throughput Burst)**
-*   **The Knob:** Switching from a high-quality `Q8_0` (8-bit) GGUF to a compressed `Q4_K_M` (4-bit) file.
-*   **Performance Win:** If a standalone edge server suddenly receives a **burst of 10 concurrent users**, staying on the `Q8_0` model would cause massive queue backlogs and SLO violations.
-*   **The Result:** The controller decides to pay a **3-10 second reload cost** to switch to the `Q4_K_M` file. The new configuration processes tokens faster and consumes significantly less VRAM per user, allowing the burst to be cleared 2-3x faster than staying on the higher-precision model.
+#### **Scenario A: Switching GGUF Files (VRAM headroom / capacity)**
+*   **The Knob:** Switching between a higher-bit `Q8_0` and a lower-bit `Q4_K_M` GGUF file.
+*   **What actually changes (measured — see `experiments/smoke/scenario_a_findings.md`):** the *consistent* effect is **VRAM**: `Q4_K_M` frees ~3.2 GB on Llama-3.1-8B, which buys more KV slots or longer context. The *throughput* effect is **regime-dependent and can flip sign** — `Q4_K_M` is faster only when bandwidth-bound (batch≈1, or CPU); under **batched GPU decode (the burst case) `Q8_0` was actually faster** in our runs (driven by llama.cpp's batch-size-dependent CUDA kernel selection, not a simple "dequant overhead").
+*   **The Result:** the controller pays a **multi-second reload cost** to change the quant file mainly to **reshape the memory budget** (free VRAM for capacity), not as a guaranteed per-token speedup. A switching-cost-aware controller must condition the quant knob's benefit on the operating regime rather than assume "smaller = faster."
 
 #### **Scenario B: Reshaping Context Length (Document Unlock)**
 *   **The Knob:** Modifying the `-c` (context length) parameter.
@@ -377,352 +383,210 @@ This gives a concrete systems version of the abstract problem from the proposal 
 
 # 9. Related Work and Novelty Check
 
-This section is the corrected Step 2 audit.
-
-## 9.1 Closest Work: MorphServe
-
-**Paper:** *MorphServe: Efficient and Workload-Aware LLM Serving via Runtime Quantized Layer Swapping and KV Cache Resizing*  
-**Sources:**
-
-- arXiv: <https://arxiv.org/abs/2506.02006>
-- OpenReview: <https://openreview.net/forum?id=1JyePezdlF>
-- GitHub: <https://github.com/MorphServe/MorphServe>
-
-MorphServe is the closest related work found so far. It dynamically adapts LLM serving under bursty workloads by using **runtime quantized layer swapping** and **pressure-aware KV cache resizing**.
-
-### Why It Is Close
-
-MorphServe overlaps with our idea on:
-
-- dynamic workload-aware LLM serving,
-- precision/quantization adaptation,
-- KV capacity adaptation,
-- latency/quality/memory trade-offs.
-
-### Key Difference
-
-MorphServe performs **fine-grained runtime adaptation inside the inference engine**, swapping selected full-precision layers with quantized alternatives and resizing KV cache at runtime.
-
-Our proposed work studies **coarse-grained configuration control for llama.cpp-style edge serving**, where the controller chooses among practical runtime configurations:
-
-```text
-model / quantization file
-context length
-number of parallel slots
-```
-
-and explicitly accounts for switching/reload/reconfiguration cost.
-
-### Novelty Impact
-
-We cannot claim:
-
-> “No one has studied dynamic quantization or KV adaptation.”
-
-That would be false because MorphServe exists.
-
-A safer claim is:
-
-> Prior work such as MorphServe studies runtime morphological adaptation inside serving engines; we study switching-cost-aware configuration control for llama.cpp-style edge inference, where adaptation occurs through practical model-file and memory-shape choices.
-
----
-
-## 9.2 QLM: Queue Management with Model Swapping
-
-**Paper:** *Queue Management for SLO-Oriented Large Language Model Serving*  
-**Venue:** SoCC 2024  
-**Sources:**
-
-- arXiv: <https://arxiv.org/abs/2407.00047>
-- Author page: <https://apatke.github.io/publications/socc24/>
-- IBM page: <https://research.ibm.com/publications/queue-management-for-large-language-model-serving--1>
-- GitHub: <https://github.com/QLM-project/QLM>
-
-QLM is a queue management system for mixed interactive and batch LLM requests across different models and SLOs. It estimates request waiting time and orchestrates operations such as request pulling, eviction, load balancing, and model swapping.
-
-Serving Operations (LSOs): It manages the queue using four operations:
-Request Pulling: Bringing requests into the active GPU batch.
-Request Eviction: Moving batch requests back to the CPU/Global Queue to make room for high-priority interactive requests.
-Model Swapping: Moving model weights between Storage, CPU, and GPU.
-Load Balancing: Distributing request groups across multiple instances.
-
-QLM explicitly identifies model swapping as a critical serving operation but notes that traditional policies like Earliest Deadline First (EDF) cause "thrashing" because they ignore the high cost of swapping models
-
-### Difference from Our Work
-
-QLM is primarily a **queue-management and orchestration** system. It does not focus on llama.cpp-style memory-shape decisions such as:
-
-```text
-which GGUF quantization file to load
-how large the context length should be
-how many KV slots to allocate
-when the reload/reconfiguration cost is worth paying
-```
-
-### Novelty Impact
-
-We should not frame our contribution as merely:
-
-> “dynamic model swapping for LLM serving.”
-
-QLM already includes model swapping as an LLM serving operation.
-
-Our novelty should be framed around:
-
-> **edge-local memory-shape configuration control with explicit switching cost.**
-
----
-
-## 9.3 Chiron: Hierarchical Autoscaling
-
-**Paper:** *Hierarchical Autoscaling for Large Language Model Serving with Chiron*  
-**Sources:**
-
-- arXiv: <https://arxiv.org/abs/2501.08090>
-- IBM discussion: <https://research.ibm.com/blog/qlm-chiron-llm-orchestration>
-
-Chiron studies hierarchical autoscaling for LLM serving, using queue size, utilization, and SLOs to scale serving instances and batch sizes.
-The Mechanism: It uses a hierarchical controller where the "Upper Level" decides how many GPU instances to provision, and the "Lower Level" decides the batching strategy for those specific instances
-
-### Difference from Our Work
-
-Chiron targets cloud-style autoscaling and instance-level resource management. Our proposed work targets edge/local inference where new cloud instances cannot be elastically provisioned, and where the main control levers are local model-file choice, context length, and KV-slot allocation.
-
-### Novelty Impact
-
-We should not claim hierarchical control for LLM serving is new. Chiron already uses hierarchical autoscaling ideas.
-
-Our contribution is hierarchical control over a different action space:
-
-```text
-fast: slot/request decisions
-medium: context/concurrency reshaping
-slow: model/quantization switching
-```
-
----
-
-## 9.4 DILEMMA: Joint Quantization and Distributed Edge Inference
-
-**Paper:** *DILEMMA: Joint LLM Quantization and Distributed LLM Inference Over Edge Computing Systems*  
-**Sources:**
-
-- arXiv HTML: <https://arxiv.org/html/2503.01704v1>
-- ResearchGate copy: <https://www.researchgate.net/publication/389580913_DILEMMA_Joint_LLM_Quantization_and_Distributed_LLM_Inference_Over_Edge_Computing_Systems>
-
-DILEMMA jointly optimizes layer placement and layer quantization across edge computing systems using an integer linear programming formulation.
-The Mechanism: It uses an Integer Linear Programming (ILP) formulation to solve two problems simultaneously: Layer Placement (which device holds which part of the model) and Layer Quantization (what bit-depth should each layer use).
-
-### Difference from Our Work
-
-It proves that quantization and resource allocation are deeply coupled at the edge. However, DILEMMA produces a static or semi-static placement. It does not solve the online decision of when an active instance should stop, reload a new GGUF file, and reshape its memory to handle a new burst of traffic.
-
-### Novelty Impact
-
-If we include multiple edge servers, we must distinguish carefully:
-
-> We are not solving static layer placement and quantization across edge servers. We are solving online keep-vs-reconfigure decisions for practical llama.cpp serving configurations.
-
----
-
-## 9.5 QLLMS: Quantization-Adaptive Edge Scheduling 
-
-**Paper:** *QLLMS: Quantization-Adaptive LLM Scheduling for Partially Informed Edge Processing*  
-**Source found:** IEEE Xplore search result: <https://ieeexplore.ieee.org/abstract/document/11044591>
-
-The search result indicates that QLLMS studies quantization-adaptive LLM scheduling for edge processing, where scheduling and quantization selection are jointly considered.
-
-### Core idea
-The key abstraction in QLLMS is the Available Quantization Set, or AQS. For each task-server pair, AQS records which quantization options are feasible under the task’s SLO constraints. For example, a task may be feasible on a cheaper GPU under 4-bit quantization but infeasible under FP16 due to memory or latency constraints. The paper defines AQS through the intersection of quantization choices satisfying multiple SLOs, including latency and perplexity requirements.
-QLLMS has three major modules:
-
-AQS Profiler
-Profiles LLM tasks across GPU types and quantization levels to determine feasible quantization options under perplexity and latency constraints.
-
-AQS Reconstructer
-Handles partially informed edge systems where not all task-server-quantization profiles are known. It uses low-rank matrix completion and singular value thresholding to reconstruct missing SLO/profile entries from partial samples. 
-
-Stable Matching Scheduler
-Uses a many-to-one deferred acceptance algorithm to match LLM tasks to edge servers. Tasks prefer cheaper feasible servers, while servers rank tasks based on normalized service-satisfaction ratios. The paper proves the resulting matching has no blocking pairs and is stable.
-
-### Novelty Impact
-
-First, it supports the claim that quantization choice and scheduling/resource allocation are deeply coupled in edge LLM serving. 
-Second, its measurement study supports our argument that quantization affects memory, latency, quality, and cost in nontrivial ways. In particular, latency is not always monotonic in bit-width, so a controller needs empirical profiles or learned performance models. 
-Third, QLLMS leaves open the configuration-control layer that we want to study. It decides where a task should run and with what quantization; it does not decide when a long-running local serving instance should pay the cost to reload a different model file, reshape context length, or change slot concurrency.
-
-QLLMS shows that quantization-aware scheduling is important for heterogeneous edge LLM serving, but it treats quantization as part of a task-server assignment problem. Our work studies a different control layer: an online llama.cpp-style serving instance must decide when to keep its current memory shape and when to pay a reconfiguration cost to change model/quantization file, context length, and KV-slot concurrency under changing workloads.
-
----
-
-## 9.6 Online Scheduling with KV Cache Constraints
-
-**Paper:** *Online Scheduling for LLM Inference with KV Cache Constraints*  
-**arXiv:** `2502.07115`  
-**Source:** <https://arxiv.org/abs/2502.07115>
-
-This paper studies online scheduling under KV-cache memory constraints. It introduces a hindsight-optimal benchmark, proves limitations of deterministic online algorithms under arbitrary arrivals, and proposes an online scheduling algorithm.
-
-### Difference from Our Work
-
-It studies:
-
-```text
-fixed configuration → how to schedule requests
-```
-
-Our work studies:
-
-```text
-changing configuration → when and how to reconfigure
-```
-
----
-
-## 9.7 llama.cpp Quantization Evaluation
-
-**Paper:** *Which Quantization Should I Use? A Unified Evaluation of llama.cpp Quantization on Llama-3.1-8B-Instruct*  
-**arXiv:** `2601.14277`  
-**Source:** <https://arxiv.org/pdf/2601.14277>
-
-This paper evaluates llama.cpp GGUF quantization schemes on Llama-3.1-8B-Instruct, including 3–8 bit K-quant and legacy formats. It measures downstream performance, perplexity, model size, compression, quantization time, and CPU throughput.
-
-### Difference from Our Work
-
-It is a **static empirical evaluation** of quantization choices. It does not study online configuration control, switching cost, context-length adaptation, or concurrency-slot reshaping.
-
-### Why It Is Useful
-
-It can provide empirical support for our quality/latency/memory trade-off model across GGUF quantization options.
-
----
-
-## 9.8 Llumnix: Dynamic Request Scheduling
-
-**Paper:** *Llumnix: Dynamic Scheduling for Large Language Model Serving*  
-**Venue:** OSDI 2024  
-**Sources:**
-
-- USENIX PDF: <https://www.usenix.org/system/files/osdi24-sun-biao.pdf>
-- arXiv: <https://arxiv.org/abs/2406.03243>
-- artifact repo: <https://github.com/alibaba/llm-scheduling-artifact>
-
-Llumnix dynamically reschedules requests across multiple model instances and migrates request state to improve load balancing, reduce fragmentation, and handle priorities/SLOs.
-
-### Difference from Our Work
-
-Llumnix adapts **request placement** across fixed serving instances. Our work adapts the **serving configuration itself**.
-
-This distinction is central:
-
-```text
-Llumnix: online scheduling within a fixed configuration
-Ours: online reconfiguration of the serving engine
-```
-
----
-
-## 9.9 DistServe, Splitwise, and Sarathi-Serve
-
-### DistServe
-
-**Paper:** *DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving*  
-**Sources:**
-
-- arXiv: <https://arxiv.org/abs/2401.09670>
-- USENIX PDF: <https://www.usenix.org/system/files/osdi24-zhong-yinmin.pdf>
-- GitHub: <https://github.com/LLMServe/DistServe>
-
-DistServe disaggregates prefill and decoding across different GPUs and co-optimizes phase-specific resource allocation and parallelism.
-
-### Splitwise
-
-**Paper:** *Splitwise: Efficient Generative LLM Inference Using Phase Splitting*  
-**Sources:**
-
-- arXiv: <https://arxiv.org/abs/2311.18677>
-- Microsoft blog: <https://www.microsoft.com/en-us/research/blog/splitwise-improves-gpu-usage-by-splitting-llm-inference-phases/>
-- artifact: <https://zenodo.org/records/11003049>
-
-Splitwise splits prompt computation and token generation across different machines to improve throughput, cost, and power efficiency.
-
-### Sarathi-Serve
-
-**Paper:** *Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve*  
-**Sources:**
-
-- USENIX: <https://www.usenix.org/conference/osdi24/presentation/agrawal>
-- GitHub: <https://github.com/microsoft/sarathi-serve>
-- Earlier SARATHI paper: <https://arxiv.org/abs/2308.16369>
-
-Sarathi-Serve uses chunked-prefills and stall-free scheduling to improve the throughput-latency trade-off in LLM serving.
-
-### Difference from Our Work
-
-These systems optimize scheduling, phase separation, or cluster resource allocation. They do not focus on llama.cpp-style online configuration control over quantization, context length, and concurrency slots.
-
----
-
-## 9.10 MuxServe, RouteLLM, and OmniRouter
-
-### MuxServe
-
-**Paper:** *MuxServe: Flexible Spatial-Temporal Multiplexing for Multiple LLM Serving*  
-**Sources:**
-
-- arXiv: <https://arxiv.org/abs/2404.02015>
-- GitHub: <https://github.com/hao-ai-lab/MuxServe>
-- project blog: <https://haoailab.com/blogs/muxserve/>
-
-MuxServe serves multiple LLMs efficiently using spatial-temporal multiplexing, model colocation, and adaptive batch scheduling.
-
-### RouteLLM
-
-**Paper:** *RouteLLM: Learning to Route LLMs with Preference Data*  
-**Sources:**
-
-- arXiv: <https://arxiv.org/abs/2406.18665>
-- ICLR 2025: <https://proceedings.iclr.cc/paper_files/paper/2025/hash/5503a7c69d48a2f86fc00b3dc09de686-Abstract-Conference.html>
-- OpenReview: <https://openreview.net/forum?id=8sSqNntaMr>
-- GitHub: <https://github.com/lm-sys/RouteLLM>
-
-RouteLLM learns routers that dynamically choose between stronger and weaker LLMs to trade off cost and quality.
-
-### OmniRouter
-
-**Paper:** *OmniRouter: Budget and Performance Controllable Multi-LLM Routing*  
-**Sources:**
-
-- arXiv: <https://arxiv.org/abs/2502.20576>
-- ACM page: <https://dl.acm.org/doi/10.1145/3787470.3787480>
-
-OmniRouter formulates multi-LLM routing as constrained optimization under budget/performance constraints.
-
-### Difference from Our Work
-
-These works route requests among existing model endpoints. Our work decides which local configuration should be active on a memory-limited edge inference engine.
-
----
-
-# 10. Updated Novelty Claim
-
-After the corrected literature check, the safe novelty claim is:
-
-> Existing LLM serving work studies engine-level KV memory management, request scheduling, model routing, autoscaling, distributed phase disaggregation, and runtime precision/KV adaptation. However, there remains a gap for **switching-cost-aware online configuration control in llama.cpp-style edge serving**, where the system must decide when to change practical deployment knobs — model/quantization file, context length, and number of KV slots — under strict local memory constraints and non-negligible reconfiguration cost.
-
-We should **not** claim:
-
-- dynamic quantization is new,
-- KV resizing is new,
-- model swapping is new,
-- hierarchical control is new,
-- multi-model routing is new.
-
-Those are already studied by MorphServe, QLM, Chiron, RouteLLM/OmniRouter, and related systems.
-
-Instead, we should claim:
-
-> The novelty is the **combination of llama.cpp-style edge constraints, memory-shape configuration, and explicit switching-cost-aware online control.**
+> **Verified pass (2026-06).** Section 9★ below is the authoritative related-work
+> writeup, based on full reads of the primary sources (not search snippets). The
+> earlier snippet-based audit (old §9.1–9.10) and the duplicate novelty-claim
+> (old §10) have been **removed** — their content is consolidated here and in
+> §9★.5; unique neighbors are preserved as bullets in §9★.3. Section numbering
+> jumps from §9★ to §11 for this reason. Full notes and citations:
+> `litcheck_2026-06.md`.
+
+# 9★. Related Work (verified, 2026-06)
+
+## 9★.1 Positioning in one paragraph
+
+Prior work on adaptive LLM serving clusters into four groups: (i) **runtime
+morphing inside the engine** (MorphServe — quantized layer swapping + KV
+resizing); (ii) **online parallelism reconfiguration** on GPU clusters (Flying
+Serving DP↔TP, ParaDySe parallel-strategy switching, LoongServe/Seesaw/Shift-
+Parallelism); (iii) **per-request mode/model routing** (ModeSwitch-LLM, HELIOS,
+QLM, RouteLLM/OmniRouter); and (iv) **offline config search / cold-start
+optimization** (AIConfigurator, ServerlessLLM and the serverless cold-start
+line). **The single closest is LaTune (WWW '26): adaptive runtime-config tuning
+for llama.cpp on edge devices** — but it tunes *cheap runtime params* and excludes
+quant/context. None of them studies **switch-cost-aware *online* control of
+llama.cpp edge memory-shape knobs — {GGUF/quant file, context length, KV slots} —
+under an *irreducible* reconfiguration cost.** That gap, plus the regime-dependence
+measurement, is our target.
+
+## 9★.2 The threats to address head-on
+
+**(A0) LaTune (WWW '26, Peking Univ.) — CLOSEST PAPER; read first.** Claims to be
+the *first to systematically study configuration tuning for LLM inference engines
+on edge devices*; backend is **llama.cpp**, evaluated on RTX 4090/3060, Apple M4,
+and **Jetson Orin Nano**. Online adaptation to a time-varying resource budget
+(max T(P) s.t. U(P) ≤ R_t) via parameter selection (Shapley) + knowledge transfer
++ two-stage optimization (offline MOBO Pareto front, online resource-aware
+selection). *This pre-empts the generic "adaptive config tuning for edge
+llama.cpp" framing — do not claim it.* **Two facts save our niche:** (1) it
+**explicitly excludes** model-compression/quantization precision and fixes context
+length, tuning only *runtime/system* params (threads, parallel, mem_pool,
+gpu-layers, kv-offload, flash-attn, ubatch) — it even encodes quant/ctx/bpw as
+*fixed task descriptors*, so our {quant file, context, slots} are exactly what it
+leaves out; (2) its online step is **free selection** from a precomputed Pareto
+set (~0.12 s) under a **rank-stability** assumption — it never models the cost of
+*applying* a reconfiguration. Our wedge: those excluded knobs are *structurally
+reload-inducing* on llama.cpp (startup-only `-c`/`-np`, GGUF swap), so the
+controller must trade off an **irreducible switching cost**. Candid risk: a
+reviewer could see us as "LaTune + quant/ctx + a cost term"; the defense is the
+fundamentally different cost structure of memory-shape knobs. **Consider narrowing
+the thesis to switch-cost-aware memory-shape reconfiguration and discussing scope
+with advisor.**
+
+**(A) ModeSwitch-LLM (arXiv:2605.23057) — closest framing.** Runs on the *same*
+model+hardware we use (Llama-3.1-8B on a single A100), routes each request to a
+fixed mode (FP16 / GPTQ-4bit / INT8 / speculative / prefix-cache / hybrids) using
+cheap workload features, and compares rule-based vs learned routers vs a
+constraint-aware oracle (≈ our planned controller study; rule-based wins).
+*Difference we rely on:* it does **stateless per-request routing among free,
+co-resident modes with ~0.01 ms overhead and no reload** — there is **no
+switching-cost term** and no context/slot knob. Our problem is exactly the cost
+it ignores: a single-process edge engine where changing the quant file, context,
+or slot count forces a real teardown+reload, and modes cannot co-reside for free.
+
+**(B) Flying Serving (arXiv:2602.22593) — closest mechanism for "online
+reconfiguration."** vLLM-based, 8×H200; switches DP↔TP online via zero-copy
+weight views, KV remap, and a pre-built communicator pool, reducing a switch from
+a **146–292 s cold restart (Llama-70B) to ~15 ms**. Its three motivating
+scenarios (burst→throughput, priority, long-context→pool memory) map almost 1:1
+onto ours. *Difference we rely on:* it **engineers the switch cost to ≈0** on a
+GPU cluster; on single-process edge llama.cpp that machinery does not exist
+(`-c` and `-np` are startup-only), so the cost is **irreducible** and must be
+*reasoned about*, not eliminated. Different knob (parallelism, not quant/ctx/
+slots).
+
+**(C) Shen, Ye, Glynn, Jaillet (arXiv:2602.07663, math.OC) — the theory
+neighbor + a terminology trap.** Formalizes *online configuration selection +
+admission control* (config examples: quantization, parallelism), with a
+**switching-aware fluid oracle** and an SP-UCB-OLP algorithm achieving
+Õ(√(KT)) regret. **Trap:** their "switching-aware" means *aware that mixing
+configs over time is valuable* (exploiting complementary resource budgets) — in
+their model **switching is FREE; there is no reconfiguration cost.** That is the
+*opposite* premise to our "switching-cost-aware." It is pure theory (synthetic +
+Alibaba cluster traces; no LLM/llama.cpp), assumes stationary i.i.d. arrivals,
+and adds an admission-control layer we do not emphasize. *Implication:* do **not**
+claim a novel online-learning algorithm/regret bound — cite this as the
+theoretical foundation and optionally **use/adapt SP-UCB-OLP as our controller**.
+Our contribution is the systems realization on edge llama.cpp + the irreducible
+switch-cost extension they omit + non-stationary edge workloads (their future
+work) + the regime-dependence measurement.
+
+**(D) DeepServeCB (IEEE GAIIS 2026) — the closest match to our *planned method*.**
+A contextual-bandit (LinUCB) scheduler for serverless multi-tenant LLM serving
+whose Request Profiler features (prompt length, predicted output length, KV-cache
+hit ratio + system state) and reward (SLO − cost − violation) are nearly identical
+to the bandit we sketched in §12.4. *Consequence:* we **cannot** claim "contextual
+bandit for adaptive LLM serving config" as novel. *Differences we rely on:* its
+action space is batch size / concurrency / KV-eviction / warm-up — cheap per-epoch
+scheduling knobs with **no switching cost, no quantization knob, no context-length
+knob**; it runs on GPU cloud (vLLM, 8×A100), not edge llama.cpp; and it assumes a
+stationary reward (non-stationary is its future work). Reuse its feature set and
+reward shape; cite it as prior art for the controller; differentiate on the
+irreducible switch cost + memory-shape knobs + edge substrate. (Caveat: minor
+venue, citation-padded; treat as a novelty data point, not a systems competitor.)
+
+## 9★.3 Other neighbors (cite + distinguish, lower threat)
+
+- **MCAP / NVE (arXiv:2604.21026, 2026) — NEW framing threat, pre-empt it.**
+  A *load-time recomputable* per-layer importance signal driving per-layer
+  precision (W4A8/W4A16) + residency (GPU/RAM/SSD pager) for **edge
+  memory-constrained** inference; uses **llama.cpp Q4_0 as baseline**. Its wording
+  ("load-time control layer," "recomputable when conditions change," calibration
+  set as a deployment-time knob) overlaps our online-adaptive pitch. *Differences
+  we rely on:* (1) **no switching cost** — profile computed once, 0 ms on reload,
+  applying a config is free; (2) knob = per-layer precision/residency, **not**
+  {quant file, ctx, slots}; (3) **load-time static-per-deployment, not online over
+  a non-stationary trace** (no control loop); (4) no regime-dependence. *Status:*
+  arXiv preprint, solo author, small evals — cite as a framing data point, not a
+  systems competitor. Differentiate on switch-cost-as-modeled-object + serving-level
+  memory-shape knobs + online control.
+- **SwapServeLLM (SC-W '25):** engine-agnostic whole-**model** hot-swap via GPU
+  checkpointing; *eliminates* switch cost (like Flying Serving), GPU datacenter,
+  model-file knob only. Low novelty threat; **high profiling value** (model-load
+  decomposition + quant-dependent disk-vs-memory load times, incl. Ollama=llama.cpp
+  path — see 9★.4).
+- **EdgeLoRA (MobiSys '25):** multi-tenant **LoRA-adapter** serving built on
+  llama.cpp, on Jetson/Pi. Knob = adapter selection + LRU adapter cache (no engine
+  reload). Medium framing overlap (edge+llama.cpp+dynamic), low mechanism overlap;
+  reuse its workload model (9★.4).
+- **MorphServe (2506.02006):** fine-grained *in-engine* layer-precision swap + KV
+  resize, state-preserving, low overhead. We do coarse-grained engine-level
+  reconfiguration with explicit reload cost on edge. Closest technical cousin.
+- **HELIOS (2504.10724):** online model + early-exit-layer selection; notable for
+  explicitly comparing "load more layers vs switch model" by overhead and gating
+  with hysteresis (Confidence Breach Counter + Re-assessment Interval). Different
+  knob; GPU.
+- **ParaDySe (2511.13198):** parallel-strategy switching for *training*; gives a
+  reusable cost-model recipe (RF interpolation + polynomial extrapolation),
+  OOM-constrained selection, and γ-hysteresis to suppress frequent switches.
+- **AIConfigurator (2601.06288):** *offline* framework-agnostic config search via
+  operator-decomposed profiled database (sub-second CPU search, no per-config GPU
+  runs). Static, no switching cost; useful predictor methodology.
+- **ServerlessLLM (2401.14351) + serverless cold-start line (ParaServe,
+  HydraServe, Tangram):** optimize *model-load* latency on GPU serverless. They
+  treat load as the cost to beat; none target edge llama.cpp memory-shape reload.
+- **QLM (2407.00047), Llumnix (2406.03243), DistServe/Splitwise/Sarathi:** queue
+  management, request rescheduling, prefill/decode disaggregation — orthogonal
+  serving axes within a fixed engine config.
+- **Edge quant+placement / scheduling (cite + distinguish):** DILEMMA
+  (2503.01704, ILP joint layer quantization + placement across edge devices —
+  static/semi-static, not online keep-vs-reconfigure); QLLMS (IEEE 11044591,
+  quantization-adaptive edge *scheduling* via an Available Quantization Set +
+  stable matching — a task→server assignment problem, not in-instance
+  reconfiguration; its finding that **latency is not monotonic in bit-width**
+  independently supports our regime-dependence point); Online Scheduling under KV
+  constraints (2502.07115, theory: scheduling *within* a fixed config). None
+  reconfigures the engine online under switching cost.
+- **Cloud autoscaling / multi-LLM routing (orthogonal):** Chiron (2501.08090,
+  hierarchical autoscaling — cloud instance provisioning, not edge knob reshaping);
+  MuxServe (2404.02015), RouteLLM (2406.18665), OmniRouter (2502.20576) — route or
+  multiplex among existing model endpoints, not local memory-shape reconfiguration.
+
+## 9★.4 What we reuse, by component
+
+- **quality(quant) + footprint(quant) — cite, don't re-run:** Kurt quant-eval
+  (arXiv:2601.14277) — per-scheme downstream accuracy + WikiText-2 PPL with std
+  errors (Tables 2/6) and size/footprint + conversion time (Table 5) for 13
+  llama.cpp GGUF schemes on Llama-3.1-8B. Quality/footprint are model-intrinsic so
+  they transfer to A100/Jetson; gives the quality axis of the quant knob for free.
+  (Their CPU throughput table does NOT transfer — throughput is regime-dependent.)
+- **Workload features + rule-first baseline:** ModeSwitch-LLM (start with rules
+  before any bandit/RL; its rule≈oracle result is a strong prior).
+- **Switch-cost hysteresis / two-timescale gating:** HELIOS (CBC + RI),
+  ParaDySe (γ-smoothing).
+- **Config-performance predictor without per-config GPU runs:** AIConfigurator
+  (operator decomposition) + ParaDySe (RF/PR).
+- **Switch-cost / load-cost decomposition for our own profiler:** **SwapServeLLM
+  (Table 1: load + torch.compile + CUDA-graph capture — cleanest teardown→load→
+  warmup template, maps onto a llama.cpp reload), and its quant-dependent disk-vs-
+  memory model-load numbers incl. the Ollama=llama.cpp path (Fig 5)**; ServerlessLLM
+  (storage→host→GPU tiers), ParaDySe (>31 s reset breakdown: imports/data/model-
+  reinit/optimizer), Flying Serving (146–292 s cold-restart reference numbers).
+- **Non-stationary workload generator:** EdgeLoRA (Gamma arrivals + power-law/Zipf-α
+  popularity + cv burstiness) — adapt "adapter popularity" → "config/regime
+  popularity."
+
+## 9★.5 Verified novelty claim
+
+> Existing work either (a) eliminates reconfiguration cost via in-engine or
+> zero-copy mechanisms (MorphServe, Flying Serving), (b) routes among free
+> co-resident modes per request (ModeSwitch-LLM, HELIOS), or (c) searches static
+> configs offline (AIConfigurator). We study **switch-cost-aware online
+> keep-vs-reconfigure control for llama.cpp-style edge serving**, over the
+> memory-shape knob set {quant file, context length, KV slots}, where the
+> reconfiguration cost is irreducible and must be traded off against future
+> benefit under non-stationary, memory-constrained workloads. We also contribute
+> the empirical finding that a knob's benefit can be **regime-dependent** (the
+> quantization knob's latency effect changes sign with hardware and decode batch
+> size), which a fixed-sign cost model would get wrong.
+
+Do **not** claim novelty for: dynamic quantization, KV resizing, model swapping,
+hierarchical control, parallelism switching, multi-model routing, **load-time
+recomputable control signals (MCAP/NVE), engine-agnostic model hot-swapping
+(SwapServeLLM), or edge multi-tenant LoRA serving (EdgeLoRA)** — all are covered
+above. Claim novelty for the **combination**: edge llama.cpp substrate +
+memory-shape knobs + explicit irreducible switching cost + online control under
+non-stationarity + the regime-dependence measurement.
 
 ---
 
@@ -927,10 +791,11 @@ for static, LRU, threshold, and our switching-cost-aware policy.
 | QLM | Queue management | Yes | Model swapping operation | Not main focus | Not our reconfig-cost objective | Cloud/fixed-capacity | Important related work |
 | Chiron | Autoscaling | Yes | No | Batch size / instances | Scale-up overhead discussed | Cloud | Autoscaling cousin |
 | DILEMMA | Edge distributed placement | Mostly optimization | Layer quantization | Layer placement | Not our online switching setting | Edge, distributed | Important if multi-server |
+| LaTune (WWW '26) | Adaptive edge config tuning | Yes (online re-select) | No (excludes quant) | No (fixes ctx) | No (free re-selection, rank-stability) | **Yes (edge + llama.cpp)** | **Closest paper; we take the knobs it excludes** |
+| ModeSwitch-LLM | Per-request mode routing | Yes | Quant modes (co-resident) | No | No (~0.01 ms routing, no reload) | No (A100) | Closest framing; free routing vs our reload |
+| MCAP / NVE | Load-time per-layer profiling | Load-time only | Per-layer precision | Per-layer residency/paging | No (0 ms, amortized) | Edge (llama.cpp baseline) | Framing threat; no switch cost, wrong knob set |
 | llama.cpp Quant Eval | Static quantization evaluation | No | Evaluates GGUF formats | No | No | Yes | Empirical support for quality/memory tradeoff |
 | Ours | Configuration control | Yes | Model-file / quantization switching | Context + slot reshaping | Yes | Yes | Target contribution |
-
----
 
 ---
 
@@ -940,6 +805,11 @@ The topic is still viable, but we must sharpen the claim.
 
 The strongest defensible version is:
 
-> **Switching-cost-aware online configuration control for llama.cpp-based edge LLM serving, focused on memory-shape adaptation through quantization/model-file choice, context length, and concurrency slots.**
+> **Switching-cost-aware online configuration control for llama.cpp-based edge LLM serving, focused on memory-shape adaptation through quantization/model-file choice, context length, and concurrency slots — under an irreducible reconfiguration cost and non-stationary workloads.**
 
-The main danger is **MorphServe**, and the second danger is **QLM/QLLMS**. But none of the sources we verified exactly study the llama.cpp controller problem as framed above.
+Per the verified pass (§9★), the closest threats to pre-empt are **LaTune** (edge +
+llama.cpp adaptive config tuning, but excludes our knobs and has no switch cost),
+**ModeSwitch-LLM** (free per-request mode routing), and **MCAP/NVE** (load-time
+recomputable per-layer signal, no switch cost). MorphServe and QLM remain technical
+cousins. None of the sources we verified studies the llama.cpp keep-vs-reconfigure
+controller problem as framed above.
