@@ -461,8 +461,7 @@ knobs are tuned, so `ctx`/`slots` may well be among them. Candid risk: a reviewe
 could see us as "LaTune + quant + a cost term"; the defense is the irreducible
 switching cost as a first-class modeled object + workload-driven non-stationarity +
 the regime-dependence measurement. **Consider narrowing the thesis to
-switch-cost-aware reconfiguration under non-stationary workload and discussing scope
-with advisor.**
+switch-cost-aware reconfiguration under non-stationary workload.**
 
 **(A) ModeSwitch-LLM (arXiv:2605.23057) — closest framing.** Runs on the *same*
 model+hardware we use (Llama-3.1-8B on a single A100), routes each request to a
