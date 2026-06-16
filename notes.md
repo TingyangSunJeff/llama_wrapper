@@ -463,7 +463,7 @@ switching cost as a first-class modeled object + workload-driven non-stationarit
 the regime-dependence measurement. **Consider narrowing the thesis to
 switch-cost-aware reconfiguration under non-stationary workload.**
 
-**(A) ModeSwitch-LLM (arXiv:2605.23057) — closest framing.** Runs on the *same*
+**(A) ModeSwitch-LLM (arXiv:2605.23057) — close framing.** Runs on the *same*
 model+hardware we use (Llama-3.1-8B on a single A100), routes each request to a
 fixed mode (FP16 / GPTQ-4bit / INT8 / speculative / prefix-cache / hybrids) using
 cheap workload features, and compares rule-based vs learned routers vs a
@@ -474,7 +474,7 @@ switching-cost term** and no context/slot knob. Our problem is exactly the cost
 it ignores: a single-process edge engine where changing the quant file, context,
 or slot count forces a real teardown+reload, and modes cannot co-reside for free.
 
-**(B) Flying Serving (arXiv:2602.22593) — closest mechanism for "online
+**(B) Flying Serving (arXiv:2602.22593) — close mechanism for "online
 reconfiguration."** vLLM-based, 8×H200; switches DP↔TP online via zero-copy
 weight views, KV remap, and a pre-built communicator pool, reducing a switch from
 a **146–292 s cold restart (Llama-70B) to ~15 ms**. Its three motivating
@@ -501,7 +501,7 @@ Our contribution is the systems realization on edge llama.cpp + the irreducible
 switch-cost extension they omit + non-stationary edge workloads (their future
 work) + the regime-dependence measurement.
 
-**(D) DeepServeCB (IEEE GAIIS 2026) — the closest match to our *planned method*.**
+**(D) DeepServeCB (IEEE GAIIS 2026).**
 A contextual-bandit (LinUCB) scheduler for serverless multi-tenant LLM serving
 whose Request Profiler features (prompt length, predicted output length, KV-cache
 hit ratio + system state) and reward (SLO − cost − violation) are nearly identical
