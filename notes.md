@@ -618,50 +618,6 @@ above. Claim novelty for the **combination**: edge llama.cpp substrate +
 memory-shape knobs + explicit irreducible switching cost + online control under
 non-stationarity + the regime-dependence measurement.
 
----
-
-# 11. Refined Paper Scope
-
-## Recommended Title
-
-> **Switching-Cost-Aware Configuration Control for llama.cpp-Based Edge LLM Serving**
-
-Alternative:
-
-> **Online Memory-Shape Adaptation for Edge LLM Serving with llama.cpp**
-
-## Core Action Space
-
-```text
-A = {
-    quantization/model file,
-    context length,
-    number of parallel KV slots
-}
-```
-
-## Core State Space
-
-```text
-S = {
-    queue length,
-    arrival rate,
-    prompt length statistics,
-    output length statistics,
-    current config,
-    memory pressure,
-    recent latency,
-    recent quality estimate,
-    time since last switch
-}
-```
-
-## Core Objective
-
-```text
-maximize latency-quality-memory reward
-minus switching/reconfiguration cost
-```
 
 ---
 
