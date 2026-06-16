@@ -2,7 +2,7 @@
 
 ## 0. Refined Paper Direction
 
-This note reframes our Branch 2 topic after reading **LaTune: Lightweight and Adaptive Configuration Tuning for LLM Inference on Edge Devices**.
+This note reframes our Branch 2 topic after reading **LaTune: Lightweight and Adaptive Configuration Tuning for LLM Inference on Edge Devices** https://dl.acm.org/doi/pdf/10.1145/3774904.3792382.
 
 LaTune studies **adaptive runtime configuration tuning** for edge LLM inference. Its core question is:
 
