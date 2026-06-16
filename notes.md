@@ -403,11 +403,25 @@ Parallelism); (iii) **per-request mode/model routing** (ModeSwitch-LLM, HELIOS,
 QLM, RouteLLM/OmniRouter); and (iv) **offline config search / cold-start
 optimization** (AIConfigurator, ServerlessLLM and the serverless cold-start
 line). **The single closest is LaTune (WWW '26): adaptive runtime-config tuning
-for llama.cpp on edge devices** — but it tunes *cheap runtime params* and excludes
-quant/context. None of them studies **switch-cost-aware *online* control of
-llama.cpp edge memory-shape knobs — {GGUF/quant file, context length, KV slots} —
-under an *irreducible* reconfiguration cost.** That gap, plus the regime-dependence
-measurement, is our target.
+for llama.cpp on edge devices** — but it never models a reconfiguration cost, it
+adapts to *exogenous resource contention* rather than the *request workload*, and
+it does not tune the GGUF/quant file. None of them studies **switch-cost-aware
+*online* control of llama.cpp edge serving under an *irreducible* reconfiguration
+cost, driven by a non-stationary request workload.** That gap, plus the
+regime-dependence measurement, is our target.
+
+> **Source-code correction (verified against the released LaTune repo, 2026-06).**
+> An earlier draft of this section claimed LaTune "fixes context length" and that
+> the knob set {context length, KV slots} is "exactly what it leaves out." **That
+> is wrong per their released code:** `knobs_files/knobs_raw.json` lists **both
+> `ctx-size` (0–8192) and `parallel` (1–8)** as tunable knobs; they pass through
+> the SHAP ranking (`00_params_ranking.py`) and `LaTune.__init__` tunes the
+> **top-5 ranked knobs**, so `ctx`/`parallel` *can be* tuned. We therefore do
+> **not** claim to "own" the context-length or slot knobs. Only the **quant/
+> model-file knob is genuinely excluded** (`--model`/`--quant` are fixed per run;
+> quant/bpw appear only as task-descriptor meta-features). The differentiation is
+> re-centered below on switch-cost-as-a-modeled-object, the quant-file knob, and
+> workload-driven (not resource-driven) non-stationarity.
 
 ## 9★.2 The threats to address head-on
 
@@ -418,19 +432,36 @@ and **Jetson Orin Nano**. Online adaptation to a time-varying resource budget
 (max T(P) s.t. U(P) ≤ R_t) via parameter selection (Shapley) + knowledge transfer
 + two-stage optimization (offline MOBO Pareto front, online resource-aware
 selection). *This pre-empts the generic "adaptive config tuning for edge
-llama.cpp" framing — do not claim it.* **Two facts save our niche:** (1) it
-**explicitly excludes** model-compression/quantization precision and fixes context
-length, tuning only *runtime/system* params (threads, parallel, mem_pool,
-gpu-layers, kv-offload, flash-attn, ubatch) — it even encodes quant/ctx/bpw as
-*fixed task descriptors*, so our {quant file, context, slots} are exactly what it
-leaves out; (2) its online step is **free selection** from a precomputed Pareto
-set (~0.12 s) under a **rank-stability** assumption — it never models the cost of
-*applying* a reconfiguration. Our wedge: those excluded knobs are *structurally
-reload-inducing* on llama.cpp (startup-only `-c`/`-np`, GGUF swap), so the
-controller must trade off an **irreducible switching cost**. Candid risk: a
-reviewer could see us as "LaTune + quant/ctx + a cost term"; the defense is the
-fundamentally different cost structure of memory-shape knobs. **Consider narrowing
-the thesis to switch-cost-aware memory-shape reconfiguration and discussing scope
+llama.cpp" framing — do not claim it.* **What actually saves our niche (verified
+against the released source code, not just the paper):**
+
+  1. **It never models a reconfiguration cost.** Offline it builds a Pareto front
+     (GP surrogate + EHVI, `latune.py`/`tuningworkflow.py`); online
+     (`config_evaluator.py::_get_pareto_best`) it just filters the precomputed
+     Pareto set by the current resource budget and takes argmax-TPS — a cheap
+     filter+argmax under a **rank-stability** assumption. Critically, every config
+     change **tears down and restarts the llama-server from scratch**
+     (`LlamaExecutor.run_server_performance_test` → `_run_llama_server` → `Popen`
+     → poll `/health`), and that restart cost is **never** in any objective. So
+     even the closest prior work *reconfigures `ctx`/`parallel` for free* — which
+     makes "switching cost is an unmodeled object" a *stronger* wedge, not weaker.
+  2. **It adapts to *exogenous* resource contention, not the request workload.**
+     Its trigger (`system_load_simulator.detect_fluctuation_continuous`) fires when
+     GPU+RAM availability shifts >10% because of *other processes*. There is no
+     `λ(t)`, prompt-length, queue, or TTFT/TPOT state. Clean axis: **LaTune reacts
+     to exogenous resource budget; we adapt to endogenous workload
+     non-stationarity.**
+  3. **It does not tune the GGUF/quant file.** `--model`/`--quant` are fixed CLI
+     args per run; quant/bpw/file-size appear only as *meta-features* (task
+     descriptors) in `01_meta_extraction.py`. The quant-file knob is genuinely ours.
+
+**Do NOT use the old "memory-shape knobs they exclude" argument:** their
+`knobs_raw.json` *does* expose `ctx-size` and `parallel`, and the top-5 SHAP-ranked
+knobs are tuned, so `ctx`/`slots` may well be among them. Candid risk: a reviewer
+could see us as "LaTune + quant + a cost term"; the defense is the irreducible
+switching cost as a first-class modeled object + workload-driven non-stationarity +
+the regime-dependence measurement. **Consider narrowing the thesis to
+switch-cost-aware reconfiguration under non-stationary workload and discussing scope
 with advisor.**
 
 **(A) ModeSwitch-LLM (arXiv:2605.23057) — closest framing.** Runs on the *same*
