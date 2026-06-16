@@ -451,7 +451,7 @@ against the released source code, not just the paper):**
      `λ(t)`, prompt-length, queue, or TTFT/TPOT state. Clean axis: **LaTune reacts
      to exogenous resource budget; we adapt to endogenous workload
      non-stationarity.**
-  3. **It does not tune the GGUF/quant file.** `--model`/`--quant` are fixed CLI
+  3. **It does not tune the GGUF/quant file or any other parameters which could cause reloading.** `--model`/`--quant` are fixed CLI
      args per run; quant/bpw/file-size appear only as *meta-features* (task
      descriptors) in `01_meta_extraction.py`. The quant-file knob is genuinely ours.
 
