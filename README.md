@@ -419,30 +419,216 @@ If this happens, we can argue:
 
 ## 9. Proposed Experiments
 
-### Experiment 1: Model Variant Profiling
+### Experiment 1: Lightweight Model Variant Calibration
 
 Goal:
 
-> Understand memory, speed, quality, and loading-time tradeoffs across model/quantization variants.
+> Build a small device-specific operating-region table for model/quantization variants, so the later controller knows which variants are feasible under different memory, latency, concurrency, and quality requirements.
 
-Measure for each variant:
+Important clarification:
 
-- model weight memory;
-- load time;
-- peak RAM/VRAM;
-- TPS;
-- TTFT;
-- TPOT;
-- max feasible `--parallel`;
-- max feasible `--ctx-size`;
-- quality proxy.
+This experiment is **not** intended to be a full quantization benchmark paper. Prior work has already studied GGUF / `llama.cpp` quantization quality, perplexity, model size, throughput, latency, and edge-device behavior in much broader settings. Therefore, we should use existing work to justify the general quantization tradeoff and to narrow our search space. Our profiling should be a **lightweight calibration step** for our own device, build, workload, and serving controller.
 
-Candidate variants:
+Why this is still necessary:
 
 ```text
-same model Q8 / Q6 / Q4 / Q3 / Q2
-smaller model high quantization vs larger model low quantization
+Published quantization results tell us general trends.
+Our controller needs local operating regions.
 ```
+
+Quantization behavior can depend on:
+
+- target hardware;
+- CPU/GPU backend;
+- `llama.cpp` build;
+- context length;
+- `--parallel` / slot count;
+- KV-cache pressure;
+- workload length distribution;
+- cold vs warm model state;
+- dynamic request arrivals.
+
+So we should not claim novelty from simply benchmarking Q4 vs Q8. Instead, we use profiling to parameterize the later adaptive controller.
+
+#### 1.1 Existing Work We Can Reuse
+
+We can cite existing work for the following points:
+
+- Broad `llama.cpp` quantization evaluations already compare 3–8 bit K-quants and legacy formats, including downstream task accuracy, perplexity, CPU throughput, model size, compression, and quantization time.
+- Edge quantization studies already evaluate quantized LLMs on constrained devices, including latency, energy, and accuracy.
+- Public edge GGUF benchmark dashboards already report device-dependent throughput behavior, KV-cache collapse thresholds, and quality benchmarks across several devices and quantization variants.
+
+Therefore, our profiling does **not** need to reproduce large benchmark suites such as MMLU, GSM8K, HumanEval, TruthfulQA, etc. We only need enough local data to support model/config/scheduling decisions.
+
+#### 1.2 What We Should Profile Ourselves
+
+We should profile only a small representative set of variants.
+
+Minimal set:
+
+```text
+Same model family:
+- Q8_0       high-quality / high-memory point
+- Q4_K_M     balanced point
+- Q2_K or Q3_K_M aggressive compression point
+```
+
+Better set if time allows:
+
+```text
+Same model family:
+- Q8_0
+- Q6_K
+- Q4_K_M
+- Q3_K_M
+- Q2_K
+
+Cross-size comparison:
+- larger model with low-bit quantization
+- smaller model with higher-bit quantization
+```
+
+The cross-size comparison is important because the controller may need to choose between:
+
+```text
+larger model Q3/Q4
+vs.
+smaller model Q8/Q4
+```
+
+This is more relevant to edge serving than simply asking which quantization is best for one model.
+
+#### 1.3 Metrics to Collect
+
+For each model variant, collect a compact profile:
+
+```text
+model_family
+model_size
+quantization
+GGUF file size
+load time
+memory after load
+peak RAM/VRAM during inference
+single-request TPS
+TTFT
+TPOT
+max feasible --parallel
+max feasible --ctx-size
+simple quality proxy
+failure/OOM rate
+```
+
+We should especially focus on serving-level metrics that prior quantization studies may not fully cover for our setup:
+
+- **load time**: needed to model cold-start and model-switching cost;
+- **peak memory**: needed to decide whether a model can coexist with KV cache and slots;
+- **TTFT**: needed for interactive or real-time edge requests;
+- **TPOT**: needed to separate decode speed from prefill delay;
+- **max feasible `--parallel`**: tells us how many slots the model can support;
+- **max feasible `--ctx-size`**: tells us context capacity under memory limits;
+- **quality proxy**: prevents the controller from always choosing the smallest/fastest variant.
+
+#### 1.4 Quality Treatment
+
+Do not make quality evaluation too large in the first version.
+
+Recommended approach:
+
+```text
+Use quality as a constraint, not the main optimization objective.
+```
+
+That is:
+
+```text
+Only variants with quality_score ≥ Q_min are considered feasible.
+Then optimize latency, throughput, memory, and robustness among feasible variants.
+```
+
+Possible lightweight quality proxies:
+
+- a small task-specific prompt set;
+- simple exact-match or multiple-choice questions;
+- small summarization/instruction-following checklist;
+- small domain-specific drone/edge command benchmark;
+- optionally a small public benchmark subset if easy to automate.
+
+The purpose is not to prove universal model quality. The purpose is to avoid obviously bad variants such as an overly aggressive quantization that fails the target task.
+
+#### 1.5 Experimental Procedure
+
+For each selected model variant:
+
+```text
+1. Launch llama.cpp server with a fixed baseline runtime configuration.
+2. Measure server load time until ready.
+3. Record memory after model load.
+4. Send a warm-up request.
+5. Run a fixed single-request benchmark.
+6. Measure TPS, TTFT, TPOT, and peak memory.
+7. Sweep --parallel until failure or unacceptable latency.
+8. Sweep --ctx-size until failure or unacceptable latency.
+9. Run the lightweight quality-proxy prompts.
+10. Save all metrics to a CSV profile table.
+```
+
+Suggested CSV schema:
+
+```text
+model_family, model_size, quantization, gguf_file_size_GB,
+load_time_s, memory_after_load_GB, peak_memory_GB,
+ctx_size, parallel, batch_size, ubatch_size,
+prompt_len, output_len,
+single_request_tps, mean_ttft_s, p95_ttft_s,
+mean_tpot_s, p95_latency_s,
+max_feasible_parallel, max_feasible_ctx_size,
+quality_score, quality_pass,
+failure_rate, failure_reason
+```
+
+#### 1.6 Output of This Experiment
+
+The output should be a small **model-variant operating-region table**:
+
+```text
+Variant A: high quality, high memory, low concurrency, long load time
+Variant B: balanced quality/memory/speed, good default
+Variant C: low memory, high concurrency, quality only acceptable for simple tasks
+Variant D: smaller model, low TTFT, useful for real-time/simple requests
+```
+
+This table becomes an input to the later controller.
+
+#### 1.7 Figures to Produce
+
+Core figures:
+
+1. **Memory vs. quantization**
+   - x-axis: quantization variant
+   - y-axis: memory after load / peak memory
+
+2. **Latency and throughput vs. quantization**
+   - x-axis: quantization variant
+   - y-axis: TPS, TTFT, TPOT
+
+3. **Quality-memory tradeoff**
+   - x-axis: memory footprint
+   - y-axis: quality proxy
+   - color: quantization level
+
+4. **Feasible serving region heatmap**
+   - rows: model variants
+   - columns: `--ctx-size` or `--parallel`
+   - cell: success/failure or max feasible concurrency
+
+#### 1.8 How to Position This Experiment in the Paper
+
+Use this wording:
+
+> Prior work has extensively profiled quantized LLM variants in terms of size, perplexity, accuracy, throughput, latency, and energy on local or edge devices. We therefore do not attempt to re-benchmark quantization broadly. Instead, we perform a lightweight device-specific calibration step to parameterize our controller's model/configuration selection under memory, KV-cache, slot, and dynamic-arrival constraints.
+
+This framing keeps the experiment modest and avoids overclaiming novelty.
 
 ### Experiment 2: Static Runtime Configuration Sweep
 
