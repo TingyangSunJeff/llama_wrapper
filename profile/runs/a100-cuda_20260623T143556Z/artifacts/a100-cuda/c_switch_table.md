@@ -10,6 +10,8 @@ _C_switch decomposition by change type. Pinned_Build: b9412-6-g764f1e64a | Platf
 
 > Model: gemma-3-1b-it (Q4_K_M & Q8_0) · GPU: NVIDIA A100 80GB PCIe · 3 repeats per transition.
 
+
+
 ---
 
 ## What is being measured
@@ -57,6 +59,31 @@ label is decided purely by which fields change between the old and new config:
 - **model-reload** — only the model file changes (e.g. Q4 → Q8 quantization, same
   shape).
 - **combined** — the model file changes *and* the shape changes (both at once).
+
+## The exact grid in this demo
+
+A "config" maps to one `llama-server` launch:
+`llama-server -m <model.gguf> -c <ctx> -np <slots> -ngl <all> --no-warmup`
+(GPU pinned via `CUDA_VISIBLE_DEVICES=0`).
+
+4 configs = quant {gemma-3-1b Q4_K_M, gemma-3-1b Q8_0} × ctx {4096, fixed} × slots {1, 4}:
+
+| | model (`-m`) | ctx (`-c`) | slots (`-np`) |
+| --- | --- | --- | --- |
+| A | gemma-3-1b Q4_K_M | 4096 | 1 |
+| B | gemma-3-1b Q4_K_M | 4096 | 4 |
+| C | gemma-3-1b Q8_0 | 4096 | 1 |
+| D | gemma-3-1b Q8_0 | 4096 | 4 |
+
+That gives 12 ordered transitions (both directions of 6 pairs), grouped into the
+three rows:
+
+- **slot-reshape (4 transitions):** A↔B and C↔D. Only `-np` changed (1 → 4 slots),
+  same model. _Note: `-c` was held at 4096, so in this demo slot-reshape was purely
+  a slot-count change — no context-length changes occurred._
+- **model-reload (4 transitions):** A↔C and B↔D. Only `-m` changed
+  (Q4_K_M ↔ Q8_0), same shape.
+- **combined (4 transitions):** A↔D and B↔C. Both `-m` and `-np` changed.
 
 ## How a single number becomes "mean ± std"
 
