@@ -1,0 +1,968 @@
+{
+  "campaign": "a100-cuda",
+  "platform": "a100-cuda",
+  "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json",
+  "values": [
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3528.7765376666666,
+      "std": 1803.7673586188466,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3891.868672,
+      "std": 1780.055167760015,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 297.6896736666667,
+      "std": 28.815791358386264,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 65.40246066666667,
+      "std": 60.59896213090662,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 4076.3874560000004,
+      "std": 1313.5699523334847,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 4700.730788,
+      "std": 1584.8369663979204,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 264.19591633333334,
+      "std": 0.14291064793196112,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 360.14741566666663,
+      "std": 288.9358579485325,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 2523.6842006666666,
+      "std": 27.010962525849724,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 2827.913162333333,
+      "std": 60.56125304416713,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 264.1170563333333,
+      "std": 50.134512985762065,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 40.11190533333333,
+      "std": 20.35770205261793,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 2843.364549666667,
+      "std": 579.4897542276744,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3206.418833333333,
+      "std": 756.2143507418342,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 230.7137753333333,
+      "std": 29.05270676134739,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 132.34050833333333,
+      "std": 148.52396823439605,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3348.1670316666664,
+      "std": 1047.894448396815,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3843.522147,
+      "std": 1336.9440503283674,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 280.99560933333333,
+      "std": 28.779506283691912,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 214.359506,
+      "std": 315.11936204682746,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 2347.83671,
+      "std": 278.12570446417044,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 2734.724897,
+      "std": 290.17635138468864,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 247.37602533333333,
+      "std": 28.939253027425337,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 139.51216166666666,
+      "std": 104.1829290529602,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 2863.055409,
+      "std": 612.9956180101092,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3358.486324,
+      "std": 888.1518136622673,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 264.14729066666666,
+      "std": 50.192405938916515,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 231.28362433333334,
+      "std": 278.20974720949306,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3344.514331,
+      "std": 1447.6030428061224,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3820.5928513333333,
+      "std": 1761.2503499667473,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 264.25421933333337,
+      "std": 0.14443028246297798,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 211.824301,
+      "std": 313.7590285375202,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 2694.2487143333333,
+      "std": 274.61076736606793,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3192.242291666667,
+      "std": 563.1463119270196,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 247.46552900000003,
+      "std": 28.94867556928662,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 250.52804833333334,
+      "std": 270.7537185803055,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3183.8927916666667,
+      "std": 1152.1719353133276,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3586.4097516666666,
+      "std": 1329.2125774210513,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 264.31920033333336,
+      "std": 0.2645135462775571,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 138.19775966666666,
+      "std": 176.81673332405825,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "combined"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 2676.297683333333,
+      "std": 290.5978914369843,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 2992.593985,
+      "std": 316.3187501346854,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 280.7399766666667,
+      "std": 28.919054543635163,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 35.556325,
+      "std": 3.205362338965597,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "model-reload"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3183.2444283333334,
+      "std": 758.7512044565194,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3687.5620266666665,
+      "std": 707.3047502821508,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 264.0186846666666,
+      "std": 0.13103551746123207,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 240.29891366666666,
+      "std": 218.06855640774057,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-cuda",
+      "axis": {
+        "change_type": "slot-reshape"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/manifest.json"
+    }
+  ],
+  "missing": []
+}

@@ -1,0 +1,61 @@
+# Sample campaign definition for the profile-suite (research infrastructure).
+#
+# Target Platform: NVIDIA A100 (CUDA). This file is a hand-authored campaign
+# input; it is loaded by profile_suite.loader.load_campaign into a frozen
+# CampaignConfig (which applies defaults). The referenced binary/model paths
+# are validated at run time by profile_suite.validation.validate_campaign, not
+# at load time.
+#
+# See design.md "Data Models" -> "Campaign definition (input)".
+
+platform: a100-cuda
+
+# Resolved llama.cpp CUDA binaries (built under build-cuda/bin).
+server_binary:        /scratch2/tingyang/llama.cpp/build-cuda/bin/llama-server
+bench_binary:         /scratch2/tingyang/llama.cpp/build-cuda/bin/llama-bench
+batched_bench_binary: /scratch2/tingyang/llama.cpp/build-cuda/bin/llama-batched-bench
+
+# quant_files below are resolved against this directory into absolute paths.
+model_dir: /scratch2/tingyang/llama.cpp/models
+
+# Pin execution to this GPU (R5.3).
+gpu_index: 0
+
+# Cross-product -> Config_Grid (R2.1, R8.2).
+config_grid:
+  quant_files:
+    - Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf
+    - Meta-Llama-3.1-8B-Instruct-Q8_0.gguf
+  ctx_lengths: [4096, 32768]
+  slot_counts: [1, 4]
+
+# Decode_Batch_Size sweep, bounded to 1..128 and including the canonical set
+# (R2.2). This is also the default applied when omitted (R8.3).
+decode_batch_sizes: [1, 2, 4, 8, 16, 32, 64, 128]
+
+# Run_Repeat count; default is 5 (R8.3).
+run_repeats: 5
+
+# Campaign-fixed prompt / generated output token lengths (R2.1).
+prompt_tokens: 512
+output_tokens: 128
+
+# All six modules enabled (this is also the default when omitted, R8.3).
+enabled_modules:
+  - Switch_Cost_Profiler
+  - Performance_Profiler
+  - Memory_Profiler
+  - Quality_Module
+  - Reproducibility_Harness
+  - Reporting_Module
+
+# Optional: a fixed memory budget enables the feasibility frontier (R3.4).
+memory_budget_mib: 9728
+
+# Optional: cited-only quality by default (R4.2). Set true to measure locally.
+local_quality: false
+
+# Timeouts and retry bound (R1.9, R1.10, R5.9 defaults).
+boot_timeout_s: 300
+warmup_timeout_s: 60
+max_attempts: 10

@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "profile-suite"
+version = "0.1.0"
+description = "Research-grade profiling infrastructure for switching-cost-aware llama.cpp edge serving"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Proprietary - research infrastructure, not for upstream contribution" }
+
+# Runtime dependencies. The suite orchestrates llama-server/bench measurements
+# (aiohttp streaming client), loads human-authored campaign definitions (pyyaml),
+# computes statistics (numpy), and renders paper figures/tables (matplotlib).
+dependencies = [
+    "aiohttp",
+    "pyyaml",
+    "matplotlib",
+    "numpy",
+]
+
+[project.optional-dependencies]
+# Property-based testing of the pure-logic core.
+dev = [
+    "hypothesis",
+    "pytest",
+]
+
+[tool.setuptools.packages.find]
+# Only the importable package lives in the distribution; tests/campaigns/runs are excluded.
+include = ["profile_suite*"]
+
+# Target interpreter for this suite:
+#   /scratch2/tingyang/anaconda/envs/mynewenv/bin/python
+# All commands (running tests, campaigns, reporting) must use that interpreter.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Slow A100 integration tests are excluded from the default fast suite.
+markers = [
+    "slow: marks tests as slow (real A100 integration); deselect with '-m \"not slow\"'",
+]

@@ -1,0 +1,47 @@
+# Focused reconfiguration-cost (C_switch) demo campaign.
+#
+# Purpose: produce REAL Switch_Cost_Profiler numbers fast, for a meeting demo.
+# Uses the small gemma-3-1b model (boots in seconds) and a 4-config grid that
+# exercises all three change types:
+#   - slot-reshape : same quant, different slot_count   (Q4 s1 <-> Q4 s4, ...)
+#   - model-reload : different quant, same slot_count    (Q4 s1 <-> Q8 s1, ...)
+#   - combined     : different quant AND slot_count       (Q4 s1 <-> Q8 s4, ...)
+#
+# Only Switch_Cost_Profiler + Reporting_Module are enabled so the run is quick.
+
+platform: a100-cuda
+
+server_binary:        /scratch2/tingyang/llama.cpp/build-cuda/bin/llama-server
+bench_binary:         /scratch2/tingyang/llama.cpp/build-cuda/bin/llama-bench
+batched_bench_binary: /scratch2/tingyang/llama.cpp/build-cuda/bin/llama-batched-bench
+
+model_dir: /scratch2/tingyang/llama.cpp/models
+
+gpu_index: 0
+
+config_grid:
+  quant_files:
+    - gemma-3-1b-it-Q4_K_M.gguf
+    - gemma-3-1b-it-Q8_0.gguf
+  ctx_lengths: [4096]
+  slot_counts: [1, 4]
+
+# Not used by Switch_Cost_Profiler, but a valid (bounded) value is required.
+decode_batch_sizes: [1]
+
+# Keep repeats small for a fast demo (>=5 is the production default).
+run_repeats: 3
+
+prompt_tokens: 128
+output_tokens: 16
+
+enabled_modules:
+  - Switch_Cost_Profiler
+  - Reporting_Module
+
+# Cited-only quality (module not enabled here anyway).
+local_quality: false
+
+boot_timeout_s: 120
+warmup_timeout_s: 60
+max_attempts: 6

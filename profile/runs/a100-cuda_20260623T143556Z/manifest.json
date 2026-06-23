@@ -1,0 +1,107 @@
+{
+  "campaign_name": "a100-cuda",
+  "config_grid": [
+    {
+      "ctx_length": 4096,
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+      "slot_count": 1
+    },
+    {
+      "ctx_length": 4096,
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+      "slot_count": 4
+    },
+    {
+      "ctx_length": 4096,
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+      "slot_count": 1
+    },
+    {
+      "ctx_length": 4096,
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+      "slot_count": 4
+    }
+  ],
+  "decode_batch_sizes": [
+    1
+  ],
+  "enabled_modules": [
+    "Switch_Cost_Profiler",
+    "Reporting_Module"
+  ],
+  "environment": {
+    "cuda_version": "unavailable",
+    "driver_version": "550.90.07",
+    "gpu_model": "NVIDIA A100 80GB PCIe",
+    "models": {
+      "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf": {
+        "abs_path": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+        "sha256": "8ccc5cd1f1b3602548715ae25a66ed73fd5dc68a210412eea643eb20eb75a135"
+      },
+      "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf": {
+        "abs_path": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+        "sha256": "b205840c5dcef55078e37d344677869a714ffd42a4ae448c48dcfb52e4bb10d5"
+      }
+    },
+    "os": "Linux 5.15.0-179-generic",
+    "python_version": "3.11.8"
+  },
+  "noise_sensitive_metrics": [],
+  "pinned_build": "b9412-6-g764f1e64a",
+  "pinned_device": "GPU-29e350cc-963a-6331-4e53-553fa96014dd (index:0)",
+  "platform": "a100-cuda",
+  "raw_log_paths": {
+    "switch_cost": [
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=combined/run00.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=combined/run01.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=combined/run02.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=combined/run03.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=model-reload/run00.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=model-reload/run01.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=model-reload/run02.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=model-reload/run03.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=slot-reshape/run00.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=slot-reshape/run01.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=slot-reshape/run02.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=slot-reshape/run03.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=combined/run00.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=combined/run01.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=combined/run02.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=combined/run03.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=model-reload/run00.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=model-reload/run01.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=model-reload/run02.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=model-reload/run03.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=slot-reshape/run00.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=slot-reshape/run01.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=slot-reshape/run02.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=slot-reshape/run03.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=combined/run00.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=combined/run01.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=combined/run02.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=combined/run03.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=model-reload/run00.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=model-reload/run01.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=model-reload/run02.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=model-reload/run03.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=slot-reshape/run00.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=slot-reshape/run01.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=slot-reshape/run02.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=slot-reshape/run03.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=combined/run00.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=combined/run01.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=combined/run02.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=combined/run03.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=model-reload/run00.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=model-reload/run01.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=model-reload/run02.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=model-reload/run03.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=slot-reshape/run00.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=slot-reshape/run01.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=slot-reshape/run02.log",
+      "raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=slot-reshape/run03.log"
+    ]
+  },
+  "run_repeats": 3,
+  "server_binary": "/scratch2/tingyang/llama.cpp/build-cuda/bin/llama-server"
+}

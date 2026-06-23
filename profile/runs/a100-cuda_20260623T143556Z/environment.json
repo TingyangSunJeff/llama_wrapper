@@ -1,0 +1,17 @@
+{
+  "cuda_version": "unavailable",
+  "driver_version": "550.90.07",
+  "gpu_model": "NVIDIA A100 80GB PCIe",
+  "models": {
+    "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf": {
+      "abs_path": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+      "sha256": "8ccc5cd1f1b3602548715ae25a66ed73fd5dc68a210412eea643eb20eb75a135"
+    },
+    "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf": {
+      "abs_path": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+      "sha256": "b205840c5dcef55078e37d344677869a714ffd42a4ae448c48dcfb52e4bb10d5"
+    }
+  },
+  "os": "Linux 5.15.0-179-generic",
+  "python_version": "3.11.8"
+}

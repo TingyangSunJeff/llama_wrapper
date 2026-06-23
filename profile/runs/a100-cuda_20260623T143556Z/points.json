@@ -1,0 +1,1130 @@
+[
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=slot-reshape",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "slot-reshape"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=slot-reshape/run00.log",
+        "metrics": {
+          "teardown_ms": 264.19249,
+          "boot_ms": 2008.003004,
+          "warmup_ms": 29.580237,
+          "c_switch_ms": 2301.775731
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=slot-reshape/run01.log",
+        "metrics": {
+          "teardown_ms": 314.163091,
+          "boot_ms": 3055.737271,
+          "warmup_ms": 31.531034,
+          "c_switch_ms": 3401.431396
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=slot-reshape/run02.log",
+        "metrics": {
+          "teardown_ms": 264.416597,
+          "boot_ms": 2008.665284,
+          "warmup_ms": 135.364385,
+          "c_switch_ms": 2408.446266
+        },
+        "error": null
+      },
+      {
+        "run_index": 3,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=slot-reshape/run03.log",
+        "metrics": {
+          "teardown_ms": 314.489333,
+          "boot_ms": 5521.927058,
+          "warmup_ms": 29.311963,
+          "c_switch_ms": 5865.728354
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 297.6896736666667,
+        "std": 28.815791358386264,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 3528.7765376666666,
+        "std": 1803.7673586188466,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 65.40246066666667,
+        "std": 60.59896213090662,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 3891.868672,
+        "std": 1780.055167760015,
+        "n_success": 3,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=model-reload",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "model-reload"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=model-reload/run00.log",
+        "metrics": {
+          "teardown_ms": 264.043302,
+          "boot_ms": 3010.992763,
+          "warmup_ms": 34.973654,
+          "c_switch_ms": 3310.009719
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=model-reload/run01.log",
+        "metrics": {
+          "teardown_ms": 264.348076,
+          "boot_ms": 5114.18346,
+          "warmup_ms": 479.377129,
+          "c_switch_ms": 5857.908665
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=model-reload/run02.log",
+        "metrics": {
+          "teardown_ms": 264.175145,
+          "boot_ms": 2599.522539,
+          "warmup_ms": 30.676789,
+          "c_switch_ms": 2894.374473
+        },
+        "error": null
+      },
+      {
+        "run_index": 3,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=model-reload/run03.log",
+        "metrics": {
+          "teardown_ms": 264.064528,
+          "boot_ms": 4515.456369,
+          "warmup_ms": 570.388329,
+          "c_switch_ms": 5349.909226
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 264.19591633333334,
+        "std": 0.14291064793196112,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 4076.3874560000004,
+        "std": 1313.5699523334847,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 360.14741566666663,
+        "std": 288.9358579485325,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 4700.730788,
+        "std": 1584.8369663979204,
+        "n_success": 3,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.717585,
+          "boot_ms": 2566.805414,
+          "warmup_ms": 31.459688,
+          "c_switch_ms": 2811.982687
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.968405,
+          "boot_ms": 2507.172136,
+          "warmup_ms": 63.616261,
+          "c_switch_ms": 2784.756802
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 264.145345,
+          "boot_ms": 2509.025044,
+          "warmup_ms": 28.667918,
+          "c_switch_ms": 2801.838307
+        },
+        "error": null
+      },
+      {
+        "run_index": 3,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=combined/run03.log",
+        "metrics": {
+          "teardown_ms": 314.237419,
+          "boot_ms": 2554.855422,
+          "warmup_ms": 28.051537,
+          "c_switch_ms": 2897.144378
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 264.1170563333333,
+        "std": 50.134512985762065,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2523.6842006666666,
+        "std": 27.010962525849724,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 40.11190533333333,
+        "std": 20.35770205261793,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2827.913162333333,
+        "std": 60.56125304416713,
+        "n_success": 3,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=slot-reshape",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "slot-reshape"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=slot-reshape/run00.log",
+        "metrics": {
+          "teardown_ms": 264.617135,
+          "boot_ms": 3015.436124,
+          "warmup_ms": 26.813846,
+          "c_switch_ms": 3306.867105
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=slot-reshape/run01.log",
+        "metrics": {
+          "teardown_ms": 213.960839,
+          "boot_ms": 2508.312653,
+          "warmup_ms": 29.389515,
+          "c_switch_ms": 2751.663007
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=slot-reshape/run02.log",
+        "metrics": {
+          "teardown_ms": 264.260943,
+          "boot_ms": 3512.501448,
+          "warmup_ms": 302.602321,
+          "c_switch_ms": 4079.364712
+        },
+        "error": null
+      },
+      {
+        "run_index": 3,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=slot-reshape/run03.log",
+        "metrics": {
+          "teardown_ms": 213.919544,
+          "boot_ms": 2509.279548,
+          "warmup_ms": 65.029689,
+          "c_switch_ms": 2788.228781
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 230.7137753333333,
+        "std": 29.05270676134739,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2843.364549666667,
+        "std": 579.4897542276744,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 132.34050833333333,
+        "std": 148.52396823439605,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 3206.418833333333,
+        "std": 756.2143507418342,
+        "n_success": 3,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 264.121252,
+          "boot_ms": 2509.187889,
+          "warmup_ms": 29.929949,
+          "c_switch_ms": 2803.23909
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 264.336981,
+          "boot_ms": 3011.909578,
+          "warmup_ms": 29.837896,
+          "c_switch_ms": 3306.084455
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 314.227284,
+          "boot_ms": 2509.677177,
+          "warmup_ms": 35.024943,
+          "c_switch_ms": 2858.929404
+        },
+        "error": null
+      },
+      {
+        "run_index": 3,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=combined/run03.log",
+        "metrics": {
+          "teardown_ms": 264.422563,
+          "boot_ms": 4522.91434,
+          "warmup_ms": 578.215679,
+          "c_switch_ms": 5365.552582
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 280.99560933333333,
+        "std": 28.779506283691912,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 3348.1670316666664,
+        "std": 1047.894448396815,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 214.359506,
+        "std": 315.11936204682746,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 3843.522147,
+        "std": 1336.9440503283674,
+        "n_success": 3,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=model-reload",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "model-reload"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=model-reload/run00.log",
+        "metrics": {
+          "teardown_ms": 213.864354,
+          "boot_ms": 2524.912742,
+          "warmup_ms": 34.536709,
+          "c_switch_ms": 2773.313805
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=model-reload/run01.log",
+        "metrics": {
+          "teardown_ms": 264.074831,
+          "boot_ms": 2509.171954,
+          "warmup_ms": 241.198942,
+          "c_switch_ms": 3014.445727
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=model-reload/run02.log",
+        "metrics": {
+          "teardown_ms": 213.959856,
+          "boot_ms": 2507.652168,
+          "warmup_ms": 33.000722,
+          "c_switch_ms": 2754.612746
+        },
+        "error": null
+      },
+      {
+        "run_index": 3,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=model-reload/run03.log",
+        "metrics": {
+          "teardown_ms": 264.093389,
+          "boot_ms": 2026.686008,
+          "warmup_ms": 144.336821,
+          "c_switch_ms": 2435.116218
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 247.37602533333333,
+        "std": 28.939253027425337,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2347.83671,
+        "std": 278.12570446417044,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 139.51216166666666,
+        "std": 104.1829290529602,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2734.724897,
+        "std": 290.17635138468864,
+        "n_success": 3,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=model-reload",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "model-reload"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=model-reload/run00.log",
+        "metrics": {
+          "teardown_ms": 264.241615,
+          "boot_ms": 3023.885135,
+          "warmup_ms": 27.692927,
+          "c_switch_ms": 3315.819677
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=model-reload/run01.log",
+        "metrics": {
+          "teardown_ms": 314.168907,
+          "boot_ms": 2508.723575,
+          "warmup_ms": 29.420833,
+          "c_switch_ms": 2852.313315
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=model-reload/run02.log",
+        "metrics": {
+          "teardown_ms": 264.487144,
+          "boot_ms": 3570.881614,
+          "warmup_ms": 548.638733,
+          "c_switch_ms": 4384.007491
+        },
+        "error": null
+      },
+      {
+        "run_index": 3,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=model-reload/run03.log",
+        "metrics": {
+          "teardown_ms": 213.785821,
+          "boot_ms": 2509.561038,
+          "warmup_ms": 115.791307,
+          "c_switch_ms": 2839.138166
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 264.14729066666666,
+        "std": 50.192405938916515,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2863.055409,
+        "std": 612.9956180101092,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 231.28362433333334,
+        "std": 278.20974720949306,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 3358.486324,
+        "std": 888.1518136622673,
+        "n_success": 3,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.073445,
+          "boot_ms": 2523.562831,
+          "warmup_ms": 87.748453,
+          "c_switch_ms": 2825.384729
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 264.417496,
+          "boot_ms": 2508.553728,
+          "warmup_ms": 27.225873,
+          "c_switch_ms": 2800.197097
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 264.202003,
+          "boot_ms": 2508.926935,
+          "warmup_ms": 34.147047,
+          "c_switch_ms": 2807.275985
+        },
+        "error": null
+      },
+      {
+        "run_index": 3,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=combined/run03.log",
+        "metrics": {
+          "teardown_ms": 264.143159,
+          "boot_ms": 5016.06233,
+          "warmup_ms": 574.099983,
+          "c_switch_ms": 5854.305472
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 264.25421933333337,
+        "std": 0.14443028246297798,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 3344.514331,
+        "std": 1447.6030428061224,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 211.824301,
+        "std": 313.7590285375202,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 3820.5928513333333,
+        "std": 1761.2503499667473,
+        "n_success": 3,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=slot-reshape",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "slot-reshape"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=slot-reshape/run00.log",
+        "metrics": {
+          "teardown_ms": 264.20008,
+          "boot_ms": 2098.050304,
+          "warmup_ms": 36.909654,
+          "c_switch_ms": 2399.160038
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=slot-reshape/run01.log",
+        "metrics": {
+          "teardown_ms": 264.248841,
+          "boot_ms": 3009.720326,
+          "warmup_ms": 555.130535,
+          "c_switch_ms": 3829.099702
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=slot-reshape/run02.log",
+        "metrics": {
+          "teardown_ms": 214.038575,
+          "boot_ms": 2508.776286,
+          "warmup_ms": 37.23033,
+          "c_switch_ms": 2760.045191
+        },
+        "error": null
+      },
+      {
+        "run_index": 3,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np4__change_type=slot-reshape/run03.log",
+        "metrics": {
+          "teardown_ms": 264.109171,
+          "boot_ms": 2564.249531,
+          "warmup_ms": 159.22328,
+          "c_switch_ms": 2987.581982
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 247.46552900000003,
+        "std": 28.94867556928662,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2694.2487143333333,
+        "std": 274.61076736606793,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 250.52804833333334,
+        "std": 270.7537185803055,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 3192.242291666667,
+        "std": 563.1463119270196,
+        "n_success": 3,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 264.343181,
+          "boot_ms": 2508.064542,
+          "warmup_ms": 34.382138,
+          "c_switch_ms": 2806.789861
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 264.208053,
+          "boot_ms": 2530.093946,
+          "warmup_ms": 33.936395,
+          "c_switch_ms": 2828.238394
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 264.621152,
+          "boot_ms": 4514.241501,
+          "warmup_ms": 342.352562,
+          "c_switch_ms": 5121.215215
+        },
+        "error": null
+      },
+      {
+        "run_index": 3,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np1__change_type=combined/run03.log",
+        "metrics": {
+          "teardown_ms": 264.128396,
+          "boot_ms": 2507.342928,
+          "warmup_ms": 38.304322,
+          "c_switch_ms": 2809.775646
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 264.31920033333336,
+        "std": 0.2645135462775571,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 3183.8927916666667,
+        "std": 1152.1719353133276,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 138.19775966666666,
+        "std": 176.81673332405825,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 3586.4097516666666,
+        "std": 1329.2125774210513,
+        "n_success": 3,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=model-reload",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "model-reload"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=model-reload/run00.log",
+        "metrics": {
+          "teardown_ms": 264.2406,
+          "boot_ms": 2022.144356,
+          "warmup_ms": 448.235605,
+          "c_switch_ms": 2734.620561
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=model-reload/run01.log",
+        "metrics": {
+          "teardown_ms": 263.891741,
+          "boot_ms": 2509.049737,
+          "warmup_ms": 37.175835,
+          "c_switch_ms": 2810.117313
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=model-reload/run02.log",
+        "metrics": {
+          "teardown_ms": 264.195826,
+          "boot_ms": 2507.992643,
+          "warmup_ms": 37.628798,
+          "c_switch_ms": 2809.817267
+        },
+        "error": null
+      },
+      {
+        "run_index": 3,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q4_K_M.gguf__c4096__np4__change_type=model-reload/run03.log",
+        "metrics": {
+          "teardown_ms": 314.132363,
+          "boot_ms": 3011.85067,
+          "warmup_ms": 31.864342,
+          "c_switch_ms": 3357.847375
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 280.7399766666667,
+        "std": 28.919054543635163,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2676.297683333333,
+        "std": 290.5978914369843,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 35.556325,
+        "std": 3.205362338965597,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2992.593985,
+        "std": 316.3187501346854,
+        "n_success": 3,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=slot-reshape",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/gemma-3-1b-it-Q8_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "slot-reshape"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=slot-reshape/run00.log",
+        "metrics": {
+          "teardown_ms": 263.973012,
+          "boot_ms": 2610.873245,
+          "warmup_ms": 32.911263,
+          "c_switch_ms": 2907.75752
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=slot-reshape/run01.log",
+        "metrics": {
+          "teardown_ms": 264.135769,
+          "boot_ms": 4014.030589,
+          "warmup_ms": 225.68327,
+          "c_switch_ms": 4503.849628
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=slot-reshape/run02.log",
+        "metrics": {
+          "teardown_ms": 263.877144,
+          "boot_ms": 3008.785274,
+          "warmup_ms": 29.905834,
+          "c_switch_ms": 3302.568252
+        },
+        "error": null
+      },
+      {
+        "run_index": 3,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-cuda_20260623T143556Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_gemma-3-1b-it-Q8_0.gguf__c4096__np1__change_type=slot-reshape/run03.log",
+        "metrics": {
+          "teardown_ms": 264.043141,
+          "boot_ms": 2526.917422,
+          "warmup_ms": 465.307637,
+          "c_switch_ms": 3256.2682
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 264.0186846666666,
+        "std": 0.13103551746123207,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 3183.2444283333334,
+        "std": 758.7512044565194,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 240.29891366666666,
+        "std": 218.06855640774057,
+        "n_success": 3,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 3687.5620266666665,
+        "std": 707.3047502821508,
+        "n_success": 3,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  }
+]
