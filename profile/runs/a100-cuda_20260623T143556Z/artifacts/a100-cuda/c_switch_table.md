@@ -4,9 +4,6 @@ _C_switch decomposition by change type. Pinned_Build: b9412-6-g764f1e64a | Platf
 
 | Change type | Teardown (ms) | Boot (ms) | Warmup (ms) | C_switch total (ms) |
 | --- | --- | --- | --- | --- |
-| slot-reshape | 259.97 ± 33.55 | 3062.41 ± 940.40 | 172.14 ± 182.03 | 3494.52 ± 964.10 |
-| model-reload | 264.11 ± 30.24 | 2990.89 ± 936.51 | 191.62 ± 216.30 | 3446.63 ± 1122.09 |
-| combined | 268.42 ± 25.79 | 3100.06 ± 973.53 | 151.12 ± 217.29 | 3519.61 ± 1181.49 |
 
 > Model: gemma-3-1b-it (Q4_K_M & Q8_0) · GPU: NVIDIA A100 80GB PCIe · 3 repeats per transition.
 
