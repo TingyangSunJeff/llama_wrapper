@@ -1,0 +1,968 @@
+{
+  "campaign": "a100-mig",
+  "platform": "a100-mig",
+  "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json",
+  "values": [
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3228.0471416666664,
+      "std": 58.253013770779354,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 2
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3714.7390733333336,
+      "std": 16.654454950933136,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 2
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 332.56015099999996,
+      "std": 55.247965110128874,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 2
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 154.13178066666669,
+      "std": 8.67394100533283,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 2
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3200.6733396666664,
+      "std": 114.86494714776109,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3632.1610156666666,
+      "std": 133.67015088878986,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 281.09602966666665,
+      "std": 28.642745223296767,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 150.39164633333334,
+      "std": 3.937711746767955,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3496.041583,
+      "std": 282.82590190477987,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 8
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3977.940395,
+      "std": 285.323722145846,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 8
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 331.121713,
+      "std": 28.652300228720417,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 8
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 150.777099,
+      "std": 6.009335302114618,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 8
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3458.006065,
+      "std": 423.5128635961454,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3991.985015,
+      "std": 460.00869676794736,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 381.0938963333333,
+      "std": 104.34861927146588,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 152.88505366666666,
+      "std": 7.133281553204271,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3323.6364806666666,
+      "std": 138.5202839113801,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3779.9300146666665,
+      "std": 173.02038090999892,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 300.49121933333333,
+      "std": 31.681604978174327,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 155.80231466666666,
+      "std": 11.442635458711472,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3449.5098,
+      "std": 407.3787169327414,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 8
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 4028.9764123333334,
+      "std": 357.7731001377921,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 8
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 431.064498,
+      "std": 57.881267339061466,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 8
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 148.40211433333334,
+      "std": 0.3327494491270178,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 8
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3568.042368,
+      "std": 392.2951498875008,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 4071.8539763333333,
+      "std": 454.70675608714913,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 347.650921,
+      "std": 76.49799941215399,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 156.16068733333333,
+      "std": 15.187231610317932,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3443.9109303333335,
+      "std": 208.53999701696128,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 2
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3966.9787623333336,
+      "std": 270.10514989472364,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 2
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 370.19217533333335,
+      "std": 129.68062675276374,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 2
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 152.87565666666669,
+      "std": 9.691594342532632,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 2
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3233.55263,
+      "std": 338.6776557953998,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 8
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3750.975081,
+      "std": 471.4615197497222,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 8
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 364.42496666666665,
+      "std": 132.75999378064355,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 8
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 152.99748433333332,
+      "std": 4.661567889039199,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 8
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3417.8283596666665,
+      "std": 182.33786109092995,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3917.4633083333333,
+      "std": 276.1671435384606,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 347.70585600000004,
+      "std": 104.16955978890465,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 151.92909266666666,
+      "std": 7.885768537205326,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 1
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3215.5461906666665,
+      "std": 198.31239872855156,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 2
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3709.029660666667,
+      "std": 257.754366227233,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 2
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 330.893395,
+      "std": 57.825137437518386,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 2
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 162.59007499999998,
+      "std": 15.802074128833121,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 2
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "boot_ms",
+      "unit": "ms",
+      "mean": 3292.308436,
+      "std": 36.51555224053441,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "c_switch_ms",
+      "unit": "ms",
+      "mean": 3830.408841,
+      "std": 74.60684779917796,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "teardown_ms",
+      "unit": "ms",
+      "mean": 383.2041366666667,
+      "std": 27.851086590343556,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    },
+    {
+      "metric": "warmup_ms",
+      "unit": "ms",
+      "mean": 154.89626833333332,
+      "std": 11.171558155949347,
+      "n_success": 3,
+      "flags": [
+        "insufficient-repeats"
+      ],
+      "config": {
+        "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+        "ctx_length": 4096,
+        "slot_count": 4
+      },
+      "platform": "a100-mig",
+      "axis": {
+        "change_type": "slot-only"
+      },
+      "manifest_ref": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T154321Z/manifest.json"
+    }
+  ],
+  "missing": []
+}
