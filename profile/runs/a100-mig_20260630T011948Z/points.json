@@ -1,0 +1,4538 @@
+[
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=slot-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 2048,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "slot-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=slot-only/run00.log",
+        "metrics": {
+          "teardown_ms": 213.961875,
+          "boot_ms": 2147.391859,
+          "warmup_ms": 139.3702,
+          "c_switch_ms": 2500.723934
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=slot-only/run01.log",
+        "metrics": {
+          "teardown_ms": 213.945974,
+          "boot_ms": 2128.672734,
+          "warmup_ms": 137.426696,
+          "c_switch_ms": 2480.045404
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=slot-only/run02.log",
+        "metrics": {
+          "teardown_ms": 213.945624,
+          "boot_ms": 2124.859479,
+          "warmup_ms": 134.952346,
+          "c_switch_ms": 2473.757449
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.94579900000002,
+        "std": 0.00024748737341345875,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2126.7661065,
+        "std": 2.696378468893527,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 136.189521,
+        "std": 1.7496296640289246,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2476.9014265,
+        "std": 4.446255620295704,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=ctx-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "ctx-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=ctx-only/run00.log",
+        "metrics": {
+          "teardown_ms": 214.152284,
+          "boot_ms": 2135.497379,
+          "warmup_ms": 137.151402,
+          "c_switch_ms": 2486.801065
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=ctx-only/run01.log",
+        "metrics": {
+          "teardown_ms": 214.036468,
+          "boot_ms": 2130.42378,
+          "warmup_ms": 136.565384,
+          "c_switch_ms": 2481.025632
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=ctx-only/run02.log",
+        "metrics": {
+          "teardown_ms": 213.948275,
+          "boot_ms": 2130.901962,
+          "warmup_ms": 136.806166,
+          "c_switch_ms": 2481.656403
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.9923715,
+        "std": 0.062361868353198034,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2130.662871,
+        "std": 0.3381257348412278,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 136.68577499999998,
+        "std": 0.17025858498765634,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2481.3410175,
+        "std": 0.4460224514758871,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.956956,
+          "boot_ms": 2145.598678,
+          "warmup_ms": 133.258593,
+          "c_switch_ms": 2492.814227
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.978186,
+          "boot_ms": 2123.964735,
+          "warmup_ms": 135.633868,
+          "c_switch_ms": 2473.576789
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 213.970545,
+          "boot_ms": 2134.672978,
+          "warmup_ms": 136.837147,
+          "c_switch_ms": 2485.48067
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.97436549999998,
+        "std": 0.0054030029150511265,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2129.3188565,
+        "std": 7.571871239893406,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 136.23550749999998,
+        "std": 0.850846740559354,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2479.5287295,
+        "std": 8.417314977537508,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=quant-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 2048,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "quant-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=quant-only/run00.log",
+        "metrics": {
+          "teardown_ms": 214.04775,
+          "boot_ms": 2131.367895,
+          "warmup_ms": 146.654505,
+          "c_switch_ms": 2492.07015
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=quant-only/run01.log",
+        "metrics": {
+          "teardown_ms": 214.000567,
+          "boot_ms": 2111.662116,
+          "warmup_ms": 144.495309,
+          "c_switch_ms": 2470.157992
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=quant-only/run02.log",
+        "metrics": {
+          "teardown_ms": 214.028197,
+          "boot_ms": 2112.251514,
+          "warmup_ms": 141.105275,
+          "c_switch_ms": 2467.384986
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.014382,
+        "std": 0.0195373603641958,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2111.956815,
+        "std": 0.41676732261784094,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 142.800292,
+        "std": 2.3971160298529464,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2468.7714889999997,
+        "std": 1.9608113468709096,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 2048,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.941064,
+          "boot_ms": 2132.665658,
+          "warmup_ms": 145.265147,
+          "c_switch_ms": 2491.871869
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.976486,
+          "boot_ms": 2116.194007,
+          "warmup_ms": 144.868138,
+          "c_switch_ms": 2475.038631
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 213.965415,
+          "boot_ms": 2114.303636,
+          "warmup_ms": 144.940401,
+          "c_switch_ms": 2473.209452
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.97095050000001,
+        "std": 0.00782837917450704,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2115.2488215000003,
+        "std": 1.336694153058366,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 144.9042695,
+        "std": 0.05109765732889822,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2474.1240415,
+        "std": 1.2934248749039148,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.006807,
+          "boot_ms": 2125.224167,
+          "warmup_ms": 142.179017,
+          "c_switch_ms": 2481.409991
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.940833,
+          "boot_ms": 2112.390661,
+          "warmup_ms": 144.723311,
+          "c_switch_ms": 2471.054805
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.008007,
+          "boot_ms": 2104.542188,
+          "warmup_ms": 140.488315,
+          "c_switch_ms": 2459.03851
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.97442,
+        "std": 0.047499190919421105,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2108.4664245,
+        "std": 5.549708480259535,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 142.605813,
+        "std": 2.994594389897901,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2465.0466575,
+        "std": 8.496803679238257,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.022988,
+          "boot_ms": 2108.326464,
+          "warmup_ms": 145.159182,
+          "c_switch_ms": 2467.508634
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.984045,
+          "boot_ms": 2106.358088,
+          "warmup_ms": 141.870723,
+          "c_switch_ms": 2462.212856
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.036249,
+          "boot_ms": 2118.538099,
+          "warmup_ms": 144.661628,
+          "c_switch_ms": 2477.235976
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.01014700000002,
+        "std": 0.03691380240505478,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2112.4480935,
+        "std": 8.612568373026686,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 143.2661755,
+        "std": 1.973467851147448,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2469.724416,
+        "std": 10.62295002657913,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=slot-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 2048,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "slot-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=slot-only/run00.log",
+        "metrics": {
+          "teardown_ms": 214.125433,
+          "boot_ms": 2121.247813,
+          "warmup_ms": 136.773043,
+          "c_switch_ms": 2472.146289
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=slot-only/run01.log",
+        "metrics": {
+          "teardown_ms": 214.083221,
+          "boot_ms": 2122.05205,
+          "warmup_ms": 137.023207,
+          "c_switch_ms": 2473.158478
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=slot-only/run02.log",
+        "metrics": {
+          "teardown_ms": 214.098232,
+          "boot_ms": 2123.373195,
+          "warmup_ms": 133.670743,
+          "c_switch_ms": 2471.14217
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.09072650000002,
+        "std": 0.010614379892382078,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2122.7126225,
+        "std": 0.9341905884309435,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 135.346975,
+        "std": 2.3705500280837963,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2472.150324,
+        "std": 1.425745059760511,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.994626,
+          "boot_ms": 2147.046888,
+          "warmup_ms": 132.703376,
+          "c_switch_ms": 2493.74489
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.981696,
+          "boot_ms": 2131.595847,
+          "warmup_ms": 136.818326,
+          "c_switch_ms": 2482.395869
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 213.921983,
+          "boot_ms": 2132.828587,
+          "warmup_ms": 134.155816,
+          "c_switch_ms": 2480.906386
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.9518395,
+        "std": 0.04222346722498377,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2132.2122170000002,
+        "std": 0.8716788134398491,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 135.48707100000001,
+        "std": 1.882678875977013,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2481.6511275000003,
+        "std": 1.0532235297619668,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=ctx-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "ctx-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=ctx-only/run00.log",
+        "metrics": {
+          "teardown_ms": 213.944175,
+          "boot_ms": 2134.16253,
+          "warmup_ms": 132.254754,
+          "c_switch_ms": 2480.361459
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=ctx-only/run01.log",
+        "metrics": {
+          "teardown_ms": 214.004318,
+          "boot_ms": 2122.597537,
+          "warmup_ms": 136.403126,
+          "c_switch_ms": 2473.004981
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=ctx-only/run02.log",
+        "metrics": {
+          "teardown_ms": 214.049439,
+          "boot_ms": 2125.884408,
+          "warmup_ms": 131.265186,
+          "c_switch_ms": 2471.199033
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.0268785,
+        "std": 0.031905365073914414,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2124.2409724999998,
+        "std": 2.3241687729852614,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 133.834156,
+        "std": 3.6330722153296002,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2472.102007,
+        "std": 1.2769980772704044,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 2048,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.942913,
+          "boot_ms": 2112.767749,
+          "warmup_ms": 142.587237,
+          "c_switch_ms": 2469.297899
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 214.026038,
+          "boot_ms": 2117.824865,
+          "warmup_ms": 144.999315,
+          "c_switch_ms": 2476.850218
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.051919,
+          "boot_ms": 2114.601348,
+          "warmup_ms": 144.811376,
+          "c_switch_ms": 2473.464643
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.03897849999998,
+        "std": 0.01830063060388781,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2116.2131065000003,
+        "std": 2.2793707299700467,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 144.9053455,
+        "std": 0.13289294134941862,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2475.1574305,
+        "std": 2.3939630407158186,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=quant-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 2048,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "quant-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=quant-only/run00.log",
+        "metrics": {
+          "teardown_ms": 214.046589,
+          "boot_ms": 2133.987432,
+          "warmup_ms": 144.859998,
+          "c_switch_ms": 2492.894019
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=quant-only/run01.log",
+        "metrics": {
+          "teardown_ms": 213.946524,
+          "boot_ms": 2102.223075,
+          "warmup_ms": 142.349925,
+          "c_switch_ms": 2458.519524
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=quant-only/run02.log",
+        "metrics": {
+          "teardown_ms": 213.953285,
+          "boot_ms": 2108.736622,
+          "warmup_ms": 145.120541,
+          "c_switch_ms": 2467.810448
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.9499045,
+        "std": 0.004780748947590327,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2105.4798485,
+        "std": 4.605773253277305,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 143.735233,
+        "std": 1.9591213616639402,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2463.1649859999998,
+        "std": 6.569675363889097,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.899492,
+          "boot_ms": 2100.886809,
+          "warmup_ms": 143.939833,
+          "c_switch_ms": 2458.726134
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 214.06747,
+          "boot_ms": 2101.936341,
+          "warmup_ms": 145.089469,
+          "c_switch_ms": 2461.09328
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 213.955924,
+          "boot_ms": 2116.756454,
+          "warmup_ms": 144.626667,
+          "c_switch_ms": 2475.339045
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.011697,
+        "std": 0.07887493301421747,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2109.3463975,
+        "std": 10.479402400250741,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 144.858068,
+        "std": 0.32725043254670405,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2468.2161625,
+        "std": 10.073277034690062,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.982767,
+          "boot_ms": 2116.575655,
+          "warmup_ms": 144.991805,
+          "c_switch_ms": 2475.550227
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.971504,
+          "boot_ms": 2104.686516,
+          "warmup_ms": 141.881533,
+          "c_switch_ms": 2460.539553
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.037169,
+          "boot_ms": 2105.164298,
+          "warmup_ms": 142.425179,
+          "c_switch_ms": 2461.626646
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.00433650000002,
+        "std": 0.046432166786611564,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2104.925407,
+        "std": 0.33784289212882423,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 142.153356,
+        "std": 0.3844157731649587,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2461.0830995,
+        "std": 0.7686908320804949,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=ctx-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 2048,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "ctx-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=ctx-only/run00.log",
+        "metrics": {
+          "teardown_ms": 213.982246,
+          "boot_ms": 2132.70749,
+          "warmup_ms": 134.992147,
+          "c_switch_ms": 2481.681883
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=ctx-only/run01.log",
+        "metrics": {
+          "teardown_ms": 213.951284,
+          "boot_ms": 2151.898996,
+          "warmup_ms": 132.121157,
+          "c_switch_ms": 2497.971437
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=ctx-only/run02.log",
+        "metrics": {
+          "teardown_ms": 213.958694,
+          "boot_ms": 2157.265445,
+          "warmup_ms": 136.68516,
+          "c_switch_ms": 2507.909299
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.954989,
+        "std": 0.005239661248607488,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2154.5822205,
+        "std": 3.794652478791839,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 134.40315850000002,
+        "std": 3.2272374706557363,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2502.940368,
+        "std": 7.027129610695941,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 2048,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.938833,
+          "boot_ms": 2127.158709,
+          "warmup_ms": 136.995434,
+          "c_switch_ms": 2478.092976
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.967965,
+          "boot_ms": 2134.99124,
+          "warmup_ms": 137.137511,
+          "c_switch_ms": 2486.096716
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.050009,
+          "boot_ms": 2125.852986,
+          "warmup_ms": 136.994445,
+          "c_switch_ms": 2476.89744
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.008987,
+        "std": 0.05801386875566644,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2130.4221129999996,
+        "std": 6.461721371605065,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 137.065978,
+        "std": 0.10116293875721774,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2481.4970780000003,
+        "std": 6.504870441606536,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=slot-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "slot-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=slot-only/run00.log",
+        "metrics": {
+          "teardown_ms": 213.970745,
+          "boot_ms": 2129.871552,
+          "warmup_ms": 137.290549,
+          "c_switch_ms": 2481.132846
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=slot-only/run01.log",
+        "metrics": {
+          "teardown_ms": 213.950304,
+          "boot_ms": 2128.085355,
+          "warmup_ms": 132.556118,
+          "c_switch_ms": 2474.591777
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=slot-only/run02.log",
+        "metrics": {
+          "teardown_ms": 214.398676,
+          "boot_ms": 2134.773541,
+          "warmup_ms": 136.912221,
+          "c_switch_ms": 2486.084438
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.17449,
+        "std": 0.31704688169417905,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2131.429448,
+        "std": 4.729261674436831,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 134.7341695,
+        "std": 3.0802299708470566,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2480.3381074999998,
+        "std": 8.126538526978006,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 2048,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.108902,
+          "boot_ms": 2131.48406,
+          "warmup_ms": 144.980664,
+          "c_switch_ms": 2490.573626
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.973516,
+          "boot_ms": 2116.057268,
+          "warmup_ms": 144.634237,
+          "c_switch_ms": 2474.665021
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 213.965595,
+          "boot_ms": 2111.730487,
+          "warmup_ms": 143.919142,
+          "c_switch_ms": 2469.615224
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.9695555,
+        "std": 0.005600992813765815,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2113.8938774999997,
+        "std": 3.05949618580926,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 144.2766895,
+        "std": 0.5056485236926079,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2472.1401225,
+        "std": 3.570745702315252,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 2048,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.969505,
+          "boot_ms": 2114.813078,
+          "warmup_ms": 144.645527,
+          "c_switch_ms": 2473.42811
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.923443,
+          "boot_ms": 2112.725875,
+          "warmup_ms": 145.062328,
+          "c_switch_ms": 2471.711646
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.319952,
+          "boot_ms": 2138.425177,
+          "warmup_ms": 143.690291,
+          "c_switch_ms": 2496.43542
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.12169749999998,
+        "std": 0.28037420270150304,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2125.575526,
+        "std": 18.172150715960996,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 144.3763095,
+        "std": 0.9701766667388513,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2484.0735329999998,
+        "std": 17.482348251923366,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=quant-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "quant-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=quant-only/run00.log",
+        "metrics": {
+          "teardown_ms": 214.250019,
+          "boot_ms": 2112.910925,
+          "warmup_ms": 142.412728,
+          "c_switch_ms": 2469.573672
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=quant-only/run01.log",
+        "metrics": {
+          "teardown_ms": 214.144983,
+          "boot_ms": 2107.673089,
+          "warmup_ms": 144.760563,
+          "c_switch_ms": 2466.578635
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=quant-only/run02.log",
+        "metrics": {
+          "teardown_ms": 214.042159,
+          "boot_ms": 2114.766384,
+          "warmup_ms": 140.039333,
+          "c_switch_ms": 2468.847876
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.093571,
+        "std": 0.07270754766872432,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2111.2197365,
+        "std": 5.01571699545672,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 142.399948,
+        "std": 3.338413748541358,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2467.7132555,
+        "std": 1.6045956992465178,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.109143,
+          "boot_ms": 2133.850414,
+          "warmup_ms": 145.255797,
+          "c_switch_ms": 2493.215354
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.950264,
+          "boot_ms": 2108.8815,
+          "warmup_ms": 142.988136,
+          "c_switch_ms": 2465.8199
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.051579,
+          "boot_ms": 2124.06675,
+          "warmup_ms": 145.082578,
+          "c_switch_ms": 2483.200907
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.0009215,
+        "std": 0.07164052353591478,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2116.4741249999997,
+        "std": 10.737593249013019,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 144.035357,
+        "std": 1.4809941410019256,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2474.5104035,
+        "std": 12.290227913550819,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 2048,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.004677,
+          "boot_ms": 2131.355963,
+          "warmup_ms": 136.435877,
+          "c_switch_ms": 2481.796517
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.966175,
+          "boot_ms": 2125.076257,
+          "warmup_ms": 136.886229,
+          "c_switch_ms": 2475.928661
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 213.935353,
+          "boot_ms": 2133.209403,
+          "warmup_ms": 136.593705,
+          "c_switch_ms": 2483.738461
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.950764,
+        "std": 0.02179444520973217,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2129.14283,
+        "std": 5.7510026889800105,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 136.73996699999998,
+        "std": 0.20684570405980374,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2479.833561,
+        "std": 5.522362539710696,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=ctx-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 2048,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "ctx-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=ctx-only/run00.log",
+        "metrics": {
+          "teardown_ms": 213.969395,
+          "boot_ms": 2124.644277,
+          "warmup_ms": 137.222826,
+          "c_switch_ms": 2475.836498
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=ctx-only/run01.log",
+        "metrics": {
+          "teardown_ms": 213.968066,
+          "boot_ms": 2130.000177,
+          "warmup_ms": 135.808687,
+          "c_switch_ms": 2479.77693
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=ctx-only/run02.log",
+        "metrics": {
+          "teardown_ms": 213.963544,
+          "boot_ms": 2127.910488,
+          "warmup_ms": 135.010707,
+          "c_switch_ms": 2476.884739
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.965805,
+        "std": 0.003197536864511534,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2128.9553324999997,
+        "std": 1.47763326247087,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 135.409697,
+        "std": 0.564257069251238,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2478.3308345,
+        "std": 2.0450878685866396,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=slot-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "slot-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=slot-only/run00.log",
+        "metrics": {
+          "teardown_ms": 214.050959,
+          "boot_ms": 2139.955442,
+          "warmup_ms": 136.188205,
+          "c_switch_ms": 2490.194606
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=slot-only/run01.log",
+        "metrics": {
+          "teardown_ms": 213.999606,
+          "boot_ms": 2132.261778,
+          "warmup_ms": 134.053631,
+          "c_switch_ms": 2480.315015
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=slot-only/run02.log",
+        "metrics": {
+          "teardown_ms": 213.983405,
+          "boot_ms": 2124.759793,
+          "warmup_ms": 136.826216,
+          "c_switch_ms": 2475.569414
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.99150550000002,
+        "std": 0.011455836961999895,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2128.5107855,
+        "std": 5.3047044658596745,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 135.4399235,
+        "std": 1.9605136549160984,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2477.9422145,
+        "std": 3.3556466479057168,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 2048,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.918882,
+          "boot_ms": 2111.114818,
+          "warmup_ms": 139.723987,
+          "c_switch_ms": 2464.757687
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 214.009457,
+          "boot_ms": 2105.016939,
+          "warmup_ms": 145.164723,
+          "c_switch_ms": 2464.191119
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.08878,
+          "boot_ms": 2110.92853,
+          "warmup_ms": 145.169542,
+          "c_switch_ms": 2470.186852
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.04911850000002,
+        "std": 0.056089831204072155,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2107.9727345,
+        "std": 4.180126083701395,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 145.1671325,
+        "std": 0.0034075475785363364,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2467.1889855,
+        "std": 4.239623462483782,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 2048,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.941024,
+          "boot_ms": 2113.101113,
+          "warmup_ms": 144.671109,
+          "c_switch_ms": 2471.713246
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.975655,
+          "boot_ms": 2108.200905,
+          "warmup_ms": 145.113961,
+          "c_switch_ms": 2467.290521
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.045328,
+          "boot_ms": 2118.938937,
+          "warmup_ms": 145.671918,
+          "c_switch_ms": 2478.656183
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.0104915,
+        "std": 0.04926625076562657,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2113.5699210000002,
+        "std": 7.592935243797967,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 145.3929395,
+        "std": 0.3945351783105138,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2472.973352,
+        "std": 8.036736672874369,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.975825,
+          "boot_ms": 2106.581736,
+          "warmup_ms": 139.429184,
+          "c_switch_ms": 2459.986745
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.973135,
+          "boot_ms": 2105.47079,
+          "warmup_ms": 144.926621,
+          "c_switch_ms": 2464.370546
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.090941,
+          "boot_ms": 2107.639117,
+          "warmup_ms": 141.773167,
+          "c_switch_ms": 2463.503225
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.032038,
+        "std": 0.08330142146444347,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2106.5549535,
+        "std": 1.5332387255301076,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 143.349894,
+        "std": 2.2298287075598506,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2463.9368855000002,
+        "std": 0.613288560565621,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=quant-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "quant-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=quant-only/run00.log",
+        "metrics": {
+          "teardown_ms": 214.107562,
+          "boot_ms": 2113.25504,
+          "warmup_ms": 145.149292,
+          "c_switch_ms": 2472.511894
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=quant-only/run01.log",
+        "metrics": {
+          "teardown_ms": 214.069519,
+          "boot_ms": 2111.043594,
+          "warmup_ms": 141.777578,
+          "c_switch_ms": 2466.890691
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=quant-only/run02.log",
+        "metrics": {
+          "teardown_ms": 213.983166,
+          "boot_ms": 2115.665039,
+          "warmup_ms": 143.833597,
+          "c_switch_ms": 2473.481802
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.0263425,
+        "std": 0.06106079187580375,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2113.3543165,
+        "std": 3.2678550983804993,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 142.8055875,
+        "std": 1.4538249771483787,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2470.1862465,
+        "std": 4.6606192836530544,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=quant-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 2048,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "quant-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=quant-only/run00.log",
+        "metrics": {
+          "teardown_ms": 213.973785,
+          "boot_ms": 2132.027925,
+          "warmup_ms": 136.673559,
+          "c_switch_ms": 2482.675269
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=quant-only/run01.log",
+        "metrics": {
+          "teardown_ms": 214.026197,
+          "boot_ms": 2128.84988,
+          "warmup_ms": 136.863639,
+          "c_switch_ms": 2479.739716
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=quant-only/run02.log",
+        "metrics": {
+          "teardown_ms": 214.007577,
+          "boot_ms": 2129.65307,
+          "warmup_ms": 136.981414,
+          "c_switch_ms": 2480.642061
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.016887,
+        "std": 0.013166328265692473,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2129.251475,
+        "std": 0.5679410955809624,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 136.9225265,
+        "std": 0.08327950115424185,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2480.1908885000003,
+        "std": 0.6380542684697529,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 2048,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.945824,
+          "boot_ms": 2142.340879,
+          "warmup_ms": 136.90666,
+          "c_switch_ms": 2493.193363
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.963765,
+          "boot_ms": 2147.177564,
+          "warmup_ms": 132.275925,
+          "c_switch_ms": 2493.417254
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 213.937233,
+          "boot_ms": 2137.42008,
+          "warmup_ms": 136.582124,
+          "c_switch_ms": 2487.939437
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.95049899999998,
+        "std": 0.018760957118443677,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2142.2988219999997,
+        "std": 6.899583103719383,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 134.4290245,
+        "std": 3.0449425140387243,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2490.6783455,
+        "std": 3.873401546798921,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.016897,
+          "boot_ms": 2127.57856,
+          "warmup_ms": 136.730012,
+          "c_switch_ms": 2478.325469
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 214.059669,
+          "boot_ms": 2148.171682,
+          "warmup_ms": 131.869105,
+          "c_switch_ms": 2494.100456
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 213.998626,
+          "boot_ms": 2125.222805,
+          "warmup_ms": 136.743732,
+          "c_switch_ms": 2475.965163
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.02914750000002,
+        "std": 0.043163919243979026,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2136.6972435,
+        "std": 16.227306547316182,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 134.3064185,
+        "std": 3.446881807455039,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2485.0328095,
+        "std": 12.82358865910512,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.025327,
+          "boot_ms": 2137.822258,
+          "warmup_ms": 133.690083,
+          "c_switch_ms": 2485.537668
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.978186,
+          "boot_ms": 2134.029263,
+          "warmup_ms": 136.89966,
+          "c_switch_ms": 2484.907109
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 213.967945,
+          "boot_ms": 2139.363172,
+          "warmup_ms": 134.593858,
+          "c_switch_ms": 2487.924975
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.9730655,
+        "std": 0.00724148054613689,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2136.6962175,
+        "std": 3.77164322413192,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 135.746759,
+        "std": 1.6304482302735035,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2486.416042,
+        "std": 2.133953513312099,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=slot-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 2048,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "slot-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=slot-only/run00.log",
+        "metrics": {
+          "teardown_ms": 214.07913,
+          "boot_ms": 2108.600362,
+          "warmup_ms": 145.134691,
+          "c_switch_ms": 2467.814183
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=slot-only/run01.log",
+        "metrics": {
+          "teardown_ms": 214.009877,
+          "boot_ms": 2112.376817,
+          "warmup_ms": 140.221862,
+          "c_switch_ms": 2466.608556
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=slot-only/run02.log",
+        "metrics": {
+          "teardown_ms": 213.997437,
+          "boot_ms": 2101.892636,
+          "warmup_ms": 145.344671,
+          "c_switch_ms": 2461.234744
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.00365699999998,
+        "std": 0.008796408357959242,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2107.1347265,
+        "std": 7.413435480287023,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 142.7832665,
+        "std": 3.622372982623489,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2463.92165,
+        "std": 3.799858906021835,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=ctx-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "ctx-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=ctx-only/run00.log",
+        "metrics": {
+          "teardown_ms": 214.043499,
+          "boot_ms": 2113.374298,
+          "warmup_ms": 140.161978,
+          "c_switch_ms": 2467.579775
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=ctx-only/run01.log",
+        "metrics": {
+          "teardown_ms": 214.011817,
+          "boot_ms": 2126.191692,
+          "warmup_ms": 140.232172,
+          "c_switch_ms": 2480.435681
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=ctx-only/run02.log",
+        "metrics": {
+          "teardown_ms": 214.105521,
+          "boot_ms": 2104.35494,
+          "warmup_ms": 144.884649,
+          "c_switch_ms": 2463.34511
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.058669,
+        "std": 0.06625873382430598,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2115.273316,
+        "std": 15.440915418288697,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 142.55841049999998,
+        "std": 3.289798036014448,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2471.8903955,
+        "std": 12.084858648449961,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.155874,
+          "boot_ms": 2110.210193,
+          "warmup_ms": 140.347828,
+          "c_switch_ms": 2464.713895
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 214.160364,
+          "boot_ms": 2129.766585,
+          "warmup_ms": 145.222315,
+          "c_switch_ms": 2489.149264
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.116432,
+          "boot_ms": 2114.406876,
+          "warmup_ms": 144.931941,
+          "c_switch_ms": 2473.455249
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.138398,
+        "std": 0.031064615111076003,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2122.0867305,
+        "std": 10.86095439095193,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 145.07712800000002,
+        "std": 0.20532542448027255,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2481.3022565,
+        "std": 11.09734443054342,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 2048,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.058349,
+          "boot_ms": 2136.240221,
+          "warmup_ms": 131.807002,
+          "c_switch_ms": 2482.105572
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 214.176115,
+          "boot_ms": 2130.408897,
+          "warmup_ms": 137.92592,
+          "c_switch_ms": 2482.510932
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.06308,
+          "boot_ms": 2137.423868,
+          "warmup_ms": 134.589028,
+          "c_switch_ms": 2486.075976
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.1195975,
+        "std": 0.07992781501141889,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2133.9163824999996,
+        "std": 4.960333563927019,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 136.257474,
+        "std": 2.359538961287125,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2484.293454,
+        "std": 2.5208667876283744,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=quant-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 2048,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "quant-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=quant-only/run00.log",
+        "metrics": {
+          "teardown_ms": 213.972235,
+          "boot_ms": 2137.133384,
+          "warmup_ms": 135.093252,
+          "c_switch_ms": 2486.198871
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=quant-only/run01.log",
+        "metrics": {
+          "teardown_ms": 214.102781,
+          "boot_ms": 2139.920781,
+          "warmup_ms": 131.95902,
+          "c_switch_ms": 2485.982582
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=quant-only/run02.log",
+        "metrics": {
+          "teardown_ms": 214.07976,
+          "boot_ms": 2132.845806,
+          "warmup_ms": 134.050641,
+          "c_switch_ms": 2480.976207
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.0912705,
+        "std": 0.01627830520969548,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2136.3832935,
+        "std": 5.00276279922529,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 133.00483050000003,
+        "std": 1.4789993927721903,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2483.4793945,
+        "std": 3.5400417116627554,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.135713,
+          "boot_ms": 2159.197628,
+          "warmup_ms": 136.746583,
+          "c_switch_ms": 2510.079924
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 214.063019,
+          "boot_ms": 2136.755827,
+          "warmup_ms": 136.858387,
+          "c_switch_ms": 2487.677233
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.05488,
+          "boot_ms": 2137.339094,
+          "warmup_ms": 131.055555,
+          "c_switch_ms": 2482.449529
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.05894949999998,
+        "std": 0.005755142092077238,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2137.0474605,
+        "std": 0.41243205094231844,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 133.956971,
+        "std": 4.103221857286292,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2485.063381,
+        "std": 3.696544948435971,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.08418,
+          "boot_ms": 2131.172834,
+          "warmup_ms": 131.187252,
+          "c_switch_ms": 2476.444266
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.983216,
+          "boot_ms": 2128.488213,
+          "warmup_ms": 133.367188,
+          "c_switch_ms": 2475.838617
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 213.950764,
+          "boot_ms": 2145.402026,
+          "warmup_ms": 134.099394,
+          "c_switch_ms": 2493.452184
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.96699,
+        "std": 0.02294702926307034,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2136.9451195,
+        "std": 11.959871868021267,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 133.733291,
+        "std": 0.5177478278254708,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2484.6454005,
+        "std": 12.454672666583829,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=slot-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 2048,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "slot-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=slot-only/run00.log",
+        "metrics": {
+          "teardown_ms": 213.985325,
+          "boot_ms": 2135.787277,
+          "warmup_ms": 145.268168,
+          "c_switch_ms": 2495.04077
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=slot-only/run01.log",
+        "metrics": {
+          "teardown_ms": 213.938494,
+          "boot_ms": 2126.256223,
+          "warmup_ms": 142.005929,
+          "c_switch_ms": 2482.200646
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=slot-only/run02.log",
+        "metrics": {
+          "teardown_ms": 213.989715,
+          "boot_ms": 2131.278848,
+          "warmup_ms": 144.09334,
+          "c_switch_ms": 2489.361903
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.9641045,
+        "std": 0.03621871643915486,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2128.7675355,
+        "std": 3.551532196857127,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 143.04963450000002,
+        "std": 1.4760224732233944,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2485.7812745,
+        "std": 5.063773386519777,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.976575,
+          "boot_ms": 2129.491442,
+          "warmup_ms": 144.738453,
+          "c_switch_ms": 2488.20647
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.911632,
+          "boot_ms": 2115.474039,
+          "warmup_ms": 140.124317,
+          "c_switch_ms": 2469.509988
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 213.995666,
+          "boot_ms": 2109.138259,
+          "warmup_ms": 142.373487,
+          "c_switch_ms": 2465.507412
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.95364899999998,
+        "std": 0.05942101125023218,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2112.306149,
+        "std": 4.480073002106345,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 141.248902,
+        "std": 1.5904033590413618,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2467.5087,
+        "std": 2.8302486318144298,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=ctx-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "ctx-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=ctx-only/run00.log",
+        "metrics": {
+          "teardown_ms": 213.981546,
+          "boot_ms": 2114.645388,
+          "warmup_ms": 145.014275,
+          "c_switch_ms": 2473.641209
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=ctx-only/run01.log",
+        "metrics": {
+          "teardown_ms": 214.105181,
+          "boot_ms": 2110.338259,
+          "warmup_ms": 145.286399,
+          "c_switch_ms": 2469.729839
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=ctx-only/run02.log",
+        "metrics": {
+          "teardown_ms": 213.973076,
+          "boot_ms": 2106.888589,
+          "warmup_ms": 145.009345,
+          "c_switch_ms": 2465.87101
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.0391285,
+        "std": 0.09341234132864581,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2108.613424,
+        "std": 2.4392850498557754,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 145.147872,
+        "std": 0.1959067621548525,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2467.8004245,
+        "std": 2.7286041533394747,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 2048,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.217567,
+          "boot_ms": 2131.850467,
+          "warmup_ms": 136.635487,
+          "c_switch_ms": 2482.703521
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 214.234098,
+          "boot_ms": 2130.250519,
+          "warmup_ms": 137.259248,
+          "c_switch_ms": 2481.743865
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 213.992026,
+          "boot_ms": 2160.641159,
+          "warmup_ms": 137.275238,
+          "c_switch_ms": 2511.908423
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.113062,
+        "std": 0.17117075273537505,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2145.445839,
+        "std": 21.48942762859887,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 137.267243,
+        "std": 0.01130663743116438,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2496.8261439999997,
+        "std": 21.329563513294882,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 2048,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.956894,
+          "boot_ms": 2135.270743,
+          "warmup_ms": 137.242137,
+          "c_switch_ms": 2486.469774
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 214.159533,
+          "boot_ms": 2129.395306,
+          "warmup_ms": 136.278409,
+          "c_switch_ms": 2479.833248
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 213.944004,
+          "boot_ms": 2144.439869,
+          "warmup_ms": 132.021642,
+          "c_switch_ms": 2490.405515
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.0517685,
+        "std": 0.15240201744235798,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2136.9175875,
+        "std": 10.638112517288176,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 134.15002550000003,
+        "std": 3.0099888116311138,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2485.1193814999997,
+        "std": 7.475721688214764,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=quant-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "quant-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=quant-only/run00.log",
+        "metrics": {
+          "teardown_ms": 213.927762,
+          "boot_ms": 2122.844437,
+          "warmup_ms": 136.687379,
+          "c_switch_ms": 2473.459578
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=quant-only/run01.log",
+        "metrics": {
+          "teardown_ms": 213.968265,
+          "boot_ms": 2128.816869,
+          "warmup_ms": 131.521548,
+          "c_switch_ms": 2474.306682
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=quant-only/run02.log",
+        "metrics": {
+          "teardown_ms": 213.961535,
+          "boot_ms": 2142.21061,
+          "warmup_ms": 136.90147,
+          "c_switch_ms": 2493.073615
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.9649,
+        "std": 0.004758828637388694,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2135.5137395,
+        "std": 9.470805086556194,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 134.21150899999998,
+        "std": 3.8041793284546888,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2483.6901485,
+        "std": 13.270225586373513,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 213.956904,
+          "boot_ms": 2134.233992,
+          "warmup_ms": 137.281679,
+          "c_switch_ms": 2485.472575
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 213.923123,
+          "boot_ms": 2124.427744,
+          "warmup_ms": 136.780864,
+          "c_switch_ms": 2475.131731
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.014737,
+          "boot_ms": 2130.357813,
+          "warmup_ms": 136.70645,
+          "c_switch_ms": 2481.079
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.96893,
+        "std": 0.06478088065161924,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2127.3927785,
+        "std": 4.193192002804131,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 136.74365699999998,
+        "std": 0.05261864401522892,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2478.1053655,
+        "std": 4.205354239440702,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=ctx-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 2048,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "ctx-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=ctx-only/run00.log",
+        "metrics": {
+          "teardown_ms": 213.905732,
+          "boot_ms": 2130.974793,
+          "warmup_ms": 140.010282,
+          "c_switch_ms": 2484.890807
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=ctx-only/run01.log",
+        "metrics": {
+          "teardown_ms": 213.920632,
+          "boot_ms": 2099.882019,
+          "warmup_ms": 145.174783,
+          "c_switch_ms": 2458.977434
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=ctx-only/run02.log",
+        "metrics": {
+          "teardown_ms": 213.974436,
+          "boot_ms": 2136.139055,
+          "warmup_ms": 144.811606,
+          "c_switch_ms": 2494.925097
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.94753400000002,
+        "std": 0.03804517325495061,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2118.010537,
+        "std": 25.637596021324754,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 144.99319450000002,
+        "std": 0.2568049194709719,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2476.9512655,
+        "std": 25.418836275108696,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 2048,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.120262,
+          "boot_ms": 2108.627284,
+          "warmup_ms": 145.058288,
+          "c_switch_ms": 2467.805834
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 214.148684,
+          "boot_ms": 2105.817698,
+          "warmup_ms": 144.899419,
+          "c_switch_ms": 2464.865801
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.006616,
+          "boot_ms": 2112.652591,
+          "warmup_ms": 145.021866,
+          "c_switch_ms": 2471.681073
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.07765,
+        "std": 0.10045724618960672,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2109.2351445,
+        "std": 4.832999188984601,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 144.9606425,
+        "std": 0.08658310403594492,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2468.273437,
+        "std": 4.819125046831,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=slot-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "slot-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=slot-only/run00.log",
+        "metrics": {
+          "teardown_ms": 213.981605,
+          "boot_ms": 2115.393744,
+          "warmup_ms": 145.394004,
+          "c_switch_ms": 2474.769353
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=slot-only/run01.log",
+        "metrics": {
+          "teardown_ms": 214.039968,
+          "boot_ms": 2110.58624,
+          "warmup_ms": 144.750592,
+          "c_switch_ms": 2469.3768
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np4__change_type=slot-only/run02.log",
+        "metrics": {
+          "teardown_ms": 214.214717,
+          "boot_ms": 2116.985431,
+          "warmup_ms": 144.975463,
+          "c_switch_ms": 2476.175611
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.1273425,
+        "std": 0.123566202905582,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2113.7858355,
+        "std": 4.524911350207906,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 144.8630275,
+        "std": 0.15900780899218525,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2472.7762055000003,
+        "std": 4.807485362105773,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 2048,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.001585,
+          "boot_ms": 2139.349292,
+          "warmup_ms": 136.787884,
+          "c_switch_ms": 2490.138761
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 214.07421,
+          "boot_ms": 2128.552015,
+          "warmup_ms": 136.848918,
+          "c_switch_ms": 2479.475143
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 213.992585,
+          "boot_ms": 2138.398544,
+          "warmup_ms": 135.102002,
+          "c_switch_ms": 2487.493131
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.03339749999998,
+        "std": 0.05771759101435371,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2133.4752795000004,
+        "std": 6.962547427049937,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 135.97546,
+        "std": 1.2352561497632781,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2483.4841370000004,
+        "std": 5.669573686272406,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 2048,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.028787,
+          "boot_ms": 2126.167408,
+          "warmup_ms": 137.036577,
+          "c_switch_ms": 2477.232772
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 214.051289,
+          "boot_ms": 2155.147092,
+          "warmup_ms": 137.045767,
+          "c_switch_ms": 2506.244148
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c2048__np4__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.148224,
+          "boot_ms": 2134.738085,
+          "warmup_ms": 137.011066,
+          "c_switch_ms": 2485.897375
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.0997565,
+        "std": 0.06854339583431938,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2144.9425885,
+        "std": 14.43134724698386,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 137.0284165,
+        "std": 0.024537312413963244,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2496.0707615,
+        "std": 14.387341163563503,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.552443,
+          "boot_ms": 2264.365092,
+          "warmup_ms": 137.963032,
+          "c_switch_ms": 2616.880567
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 214.183996,
+          "boot_ms": 2139.749162,
+          "warmup_ms": 137.450066,
+          "c_switch_ms": 2491.383224
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.045179,
+          "boot_ms": 2126.033613,
+          "warmup_ms": 137.167013,
+          "c_switch_ms": 2477.245805
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.1145875,
+        "std": 0.09815844204398519,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2132.8913875,
+        "std": 9.698357705596377,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 137.3085395,
+        "std": 0.20014869573519253,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2484.3145145,
+        "std": 9.996664843375635,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=quant-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "ctx_length": 4096,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "quant-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=quant-only/run00.log",
+        "metrics": {
+          "teardown_ms": 214.151993,
+          "boot_ms": 2129.924952,
+          "warmup_ms": 136.937192,
+          "c_switch_ms": 2481.014137
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=quant-only/run01.log",
+        "metrics": {
+          "teardown_ms": 214.109642,
+          "boot_ms": 2123.117271,
+          "warmup_ms": 130.960581,
+          "c_switch_ms": 2468.187494
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_0.gguf__c4096__np4__change_type=quant-only/run02.log",
+        "metrics": {
+          "teardown_ms": 214.054219,
+          "boot_ms": 2130.334912,
+          "warmup_ms": 132.442393,
+          "c_switch_ms": 2476.831524
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.0819305,
+        "std": 0.03918997913371537,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2126.7260914999997,
+        "std": 5.103642895269863,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 131.701487,
+        "std": 1.047799313643614,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2472.509509,
+        "std": 6.112252229780224,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 2048,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "combined"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined/run00.log",
+        "metrics": {
+          "teardown_ms": 214.049448,
+          "boot_ms": 2115.660708,
+          "warmup_ms": 139.828373,
+          "c_switch_ms": 2469.538529
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined/run01.log",
+        "metrics": {
+          "teardown_ms": 214.183065,
+          "boot_ms": 2116.093019,
+          "warmup_ms": 145.243846,
+          "c_switch_ms": 2475.51993
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np1__change_type=combined/run02.log",
+        "metrics": {
+          "teardown_ms": 214.008357,
+          "boot_ms": 2099.89348,
+          "warmup_ms": 144.781453,
+          "c_switch_ms": 2458.68329
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.095711,
+        "std": 0.12353721152754615,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2107.9932495000003,
+        "std": 11.454803878995753,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 145.0126495,
+        "std": 0.3269612258731853,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2467.1016099999997,
+        "std": 11.905302316396666,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=ctx-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 2048,
+      "slot_count": 4
+    },
+    "axis": {
+      "change_type": "ctx-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=ctx-only/run00.log",
+        "metrics": {
+          "teardown_ms": 214.039988,
+          "boot_ms": 2105.667989,
+          "warmup_ms": 145.200634,
+          "c_switch_ms": 2464.908611
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=ctx-only/run01.log",
+        "metrics": {
+          "teardown_ms": 214.014617,
+          "boot_ms": 2122.837447,
+          "warmup_ms": 145.661337,
+          "c_switch_ms": 2482.513401
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c2048__np4__change_type=ctx-only/run02.log",
+        "metrics": {
+          "teardown_ms": 214.038498,
+          "boot_ms": 2129.005109,
+          "warmup_ms": 145.352862,
+          "c_switch_ms": 2488.396469
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 214.0265575,
+        "std": 0.01688641704152806,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2125.921278,
+        "std": 4.36119562426679,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 145.50709949999998,
+        "std": 0.21812476432653127,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2485.4549349999998,
+        "std": 4.1599572769813244,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  },
+  {
+    "point_id": "switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=slot-only",
+    "module": "switch_cost",
+    "config": {
+      "quant_file": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "ctx_length": 4096,
+      "slot_count": 1
+    },
+    "axis": {
+      "change_type": "slot-only"
+    },
+    "repeats": [
+      {
+        "run_index": 0,
+        "discarded_warmup": true,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=slot-only/run00.log",
+        "metrics": {
+          "teardown_ms": 213.960305,
+          "boot_ms": 2130.411235,
+          "warmup_ms": 144.416716,
+          "c_switch_ms": 2488.788256
+        },
+        "error": null
+      },
+      {
+        "run_index": 1,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=slot-only/run01.log",
+        "metrics": {
+          "teardown_ms": 213.975245,
+          "boot_ms": 2137.619319,
+          "warmup_ms": 142.459541,
+          "c_switch_ms": 2494.054105
+        },
+        "error": null
+      },
+      {
+        "run_index": 2,
+        "discarded_warmup": false,
+        "ok": true,
+        "raw_log_path": "/scratch2/tingyang/llama.cpp/profile/runs/a100-mig_20260630T011948Z/raw/switch_cost/switch_cost___scratch2_tingyang_llama.cpp_models_Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf__c4096__np1__change_type=slot-only/run02.log",
+        "metrics": {
+          "teardown_ms": 213.971525,
+          "boot_ms": 2130.895511,
+          "warmup_ms": 142.924715,
+          "c_switch_ms": 2487.791751
+        },
+        "error": null
+      }
+    ],
+    "aggregates": {
+      "teardown_ms": {
+        "mean": 213.973385,
+        "std": 0.002630437226004812,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "boot_ms": {
+        "mean": 2134.257415,
+        "std": 4.754450232196171,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "warmup_ms": {
+        "mean": 142.692128,
+        "std": 0.32892768983166426,
+        "n_success": 2,
+        "insufficient": true
+      },
+      "c_switch_ms": {
+        "mean": 2490.922928,
+        "std": 4.4281529795906724,
+        "n_success": 2,
+        "insufficient": true
+      }
+    },
+    "status": "complete",
+    "reason": null
+  }
+]

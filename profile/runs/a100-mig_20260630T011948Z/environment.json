@@ -1,0 +1,17 @@
+{
+  "cuda_version": "12.4",
+  "driver_version": "550.90.07",
+  "gpu_model": "NVIDIA A100 80GB PCIe",
+  "models": {
+    "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf": {
+      "abs_path": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_0.gguf",
+      "sha256": "fdbf65ec00be5dff499b1a1173ffb1b4dcf27dd3f5f2d7edce5a826eaa2c7f32"
+    },
+    "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf": {
+      "abs_path": "/scratch2/tingyang/llama.cpp/models/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "sha256": "7b064f5842bf9532c91456deda288a1b672397a54fa729aa665952863033557c"
+    }
+  },
+  "os": "Linux 5.15.0-179-generic",
+  "python_version": "3.11.8"
+}
